@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                web前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -501,31 +514,38 @@
 <p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示。</p>
 <p>v-bind可以绑定动态参数，你可以使用动态参数为一个动态的事件名绑定处理函数</p>
 <p>html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:</span>[<span class="attr">attributeName</span>]=<span class="string">&quot;url&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>[attributeName]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:</span>[<span class="attr">eventName</span>]=<span class="string">&quot;doSomething&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-on:</span>[eventName]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doSomething<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre>
 <h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E4%BF%AE%E9%A5%B0%E7%AC%A6">修饰符</a></h4><p>修饰符 (modifier) 是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定</p>
 <p>html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">&quot;onSubmit&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name"><span class="token namespace">v-on:</span>submit.prevent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>onSubmit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#v-bind-%E7%BC%A9%E5%86%99"><code>v-bind</code> 缩写</a>为<code>:</code>,<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#v-on-%E7%BC%A9%E5%86%99"><code>v-on</code> 缩写</a>为<code>@</code></p>
 <h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性</a></h3><p>模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。所以，对于任何复杂逻辑，你都应当使用<strong>计算属性</strong>。</p>
 <p>html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Original message: "<span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> message <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span>
+  <span class="token attr-name">&lt;p</span><span class="token punctuation">></span></span>Computed reversed message: "<span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> reversedMessage <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&#x27;#example&#x27;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&#x27;Hello&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.message.split(<span class="string">&#x27;&#x27;</span>).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#example'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    message<span class="token punctuation">:</span> <span class="token string">'Hello'</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+  computed<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 计算属性的 getter</span>
+    reversedMessage<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// `this` 指向 vm 实例</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+</code></pre>
 <p>我们可以将同一函数定义为一个方法(methods)而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是<strong>计算属性是基于它们的响应式依赖进行缓存的</strong>。只在相关响应式依赖发生改变时它们才会重新求值。</p>
 <p>观察和响应 Vue 实例上的数据变动：<strong>侦听属性</strong>。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 <code>watch</code>,通常更好的做法是使用计算属性而不是命令式的 <code>watch</code> 回调</p>
 <p>计算属性默认只有 getter，不过在需要时你也可以提供一个 setter</p>
@@ -593,7 +613,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -757,280 +781,6 @@
     
 
     
-        <style>
-    .twikoo-card {
-        margin: 1.5rem auto;
-    }
-
-    .twikoo-card .card-content {
-        padding: 20px;
-    }
-
-    #tcomments textarea {
-        box-sizing: border-box;
-        background: url("/") 100% 100% no-repeat;
-    }
-
-    #tcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #tcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #tcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #tcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #tcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #tcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #tcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #tcomments ul li {
-        list-style-type: disc;
-    }
-
-    #tcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #tcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #tcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #tcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #tcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #tcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #tcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #tcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #tcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #tcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #tcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #tcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #tcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #tcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #tcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #tcomments dfn {
-        font-style: italic;
-    }
-
-    #tcomments small {
-        font-size: 85%;
-    }
-
-    #tcomments cite {
-        font-style: normal;
-    }
-
-    #tcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card twikoo-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div class="card-content" style="display: grid">
-        <div id="tcomments"></div>
-    </div>
-</div>
-
-<script src="/libs/twikoo/twikoo.all.min.js"></script>
-<script>
-    twikoo.init({
-        envId: 'twikoo-1gs9l0fb17e7897a',
-        el: '#tcomments',
-        region: '',
-        path: ''
-    }).then(function () {
-        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
-        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-            if (tkInputs[tkInputsIndex]) {
-                tkInputs[tkInputsIndex].classList.add('browser-default');
-            }
-        }
-    });
-</script>
-
-    
 
     
 
@@ -1062,11 +812,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1099,13 +861,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1307,8 +1081,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1325,7 +1097,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/Oxygenend" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1504,8 +1276,6 @@ $(function () {
     <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
     
 
@@ -1514,7 +1284,16 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
@@ -1525,6 +1304,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 
 </html>

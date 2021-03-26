@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%B8%8D%E8%BF%B7%E8%B7%AF%E7%9A%84JavaScript/">
+                                <span class="chip bg-color">不迷路的JavaScript</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                web前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -484,8 +497,22 @@
 <li>符号（symbol，ES6 中新增）</li>
 </ul>
 <p>除对象之外，其他统称为“基本类型”。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">typeof undefined     &#x3D;&#x3D;&#x3D; &quot;undefined&quot;; &#x2F;&#x2F; true </span><br><span class="line">typeof true          &#x3D;&#x3D;&#x3D; &quot;boolean&quot;;   &#x2F;&#x2F; true</span><br><span class="line">typeof 42            &#x3D;&#x3D;&#x3D; &quot;number&quot;;    &#x2F;&#x2F; true</span><br><span class="line">typeof &quot;42&quot;          &#x3D;&#x3D;&#x3D; &quot;string&quot;;    &#x2F;&#x2F; true </span><br><span class="line">typeof &#123; life: 42 &#125;  &#x3D;&#x3D;&#x3D; &quot;object&quot;;    &#x2F;&#x2F; true </span><br><span class="line">typeof Symbol()      &#x3D;&#x3D;&#x3D; &quot;symbol&quot;;    &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">typeof null          &#x3D;&#x3D;&#x3D; &quot;object&quot;;    &#x2F;&#x2F; true</span><br><span class="line">&#x2F;&#x2F;null 是基本类型中唯一的一个“假值，正确的返回结果应该是 &quot;null&quot;，但这个bug 由来已久</span><br><span class="line"></span><br><span class="line">typeof function a()&#123; &#x2F;* .. *&#x2F; &#125; &#x3D;&#x3D;&#x3D; &quot;function&quot;; &#x2F;&#x2F; true</span><br><span class="line">&#x2F;&#x2F;函数是 object 的一个“子类型”。具体来说，函数是“可调用对象”，它有一个内部属 性 [[Call]]，该属性使其可以被调用。</span><br><span class="line"></span><br><span class="line">typeof [1,2,3] &#x3D;&#x3D;&#x3D; &quot;object&quot;; &#x2F;&#x2F; true</span><br><span class="line">&#x2F;&#x2F;数组也是对象。确切地说，它也是 object 的一个“子类型”，数组的 元素按数字顺序来进行索</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">typeof</span> undefined     <span class="token operator">===</span> <span class="token string">"undefined"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true </span>
+<span class="token keyword">typeof</span> <span class="token boolean">true</span>          <span class="token operator">===</span> <span class="token string">"boolean"</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// true</span>
+<span class="token keyword">typeof</span> <span class="token number">42</span>            <span class="token operator">===</span> <span class="token string">"number"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+<span class="token keyword">typeof</span> <span class="token string">"42"</span>          <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true </span>
+<span class="token keyword">typeof</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> life<span class="token punctuation">:</span> <span class="token number">42</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true </span>
+<span class="token keyword">typeof</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>      <span class="token operator">===</span> <span class="token string">"symbol"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
 
+<span class="token keyword">typeof</span> <span class="token keyword">null</span>          <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">//null 是基本类型中唯一的一个“假值，正确的返回结果应该是 "null"，但这个bug 由来已久</span>
+
+<span class="token keyword">typeof</span> <span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* .. */</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">===</span> <span class="token string">"function"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">//函数是 object 的一个“子类型”。具体来说，函数是“可调用对象”，它有一个内部属 性 [[Call]]，该属性使其可以被调用。</span>
+
+<span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">//数组也是对象。确切地说，它也是 object 的一个“子类型”，数组的 元素按数字顺序来进行索</span>
+</code></pre>
 <h2 id="值和类型"><a href="#值和类型" class="headerlink" title="值和类型"></a>值和类型</h2><ul>
 <li>JavaScript 中的变量是没有类型的，只有值才有。变量可以随时持有任何类型的值。</li>
 <li>也就是说JavaScript 不做“类型强制”；也就是说，语言引擎不要求变量总是 持有与其初始值同类型的值。一个变量可以现在被赋值为字符串类型值，随后又被赋值为 数字类型值。</li>
@@ -495,8 +522,12 @@
 <li>已在作用域中声明但还没有赋值的变量，是 undeﬁned 的。</li>
 <li>相反，还没有在作用域中声明 过的变量，是 undeclared 的。</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a; </span><br><span class="line"> typeof a; &#x2F;&#x2F; &quot;undefined&quot; </span><br><span class="line"> typeof b; &#x2F;&#x2F; &quot;undefined&quot;</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F;对于 undeclared（或者 not deﬁned）变量，typeof 照样返回 &quot;undefined&quot;。请注意虽然 b 是 一个 undeclared 变量，但 typeof b 并没有报错。这是因为 typeof 有一个特殊的安全防范 机制。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a<span class="token punctuation">;</span> 
+ <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "undefined" </span>
+ <span class="token keyword">typeof</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "undefined"</span>
 
+ <span class="token comment" spellcheck="true">//对于 undeclared（或者 not deﬁned）变量，typeof 照样返回 "undefined"。请注意虽然 b 是 一个 undeclared 变量，但 typeof b 并没有报错。这是因为 typeof 有一个特殊的安全防范 机制。</span>
+</code></pre>
 <h1 id="2-值"><a href="#2-值" class="headerlink" title="2.值"></a>2.值</h1><blockquote>
 <ol>
 <li>JavaScript 中的数组是通过数字索引的一组任意类型的值。字符串和数组类似，但是它们的 行为特征不同，在将字符作为数组来处理时需要特别小心。JavaScript 中的数字包括“整 数”和“浮点型”。</li>
@@ -510,16 +541,31 @@
 <li>对数组声明后即可向其中加入值，不需要预先设定大小</li>
 </ol>
 <h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><p>一些 DOM 查询操作会返回 DOM 元素列表，它们并非真正意义上的数组，但十分 类似。另一个例子是通过 arguments 对象（类数组）将函数的参数当作列表来访问（从 ES6 开始已废止）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;    </span><br><span class="line">    var arr &#x3D; Array.prototype.slice.call( arguments );    </span><br><span class="line">    arr.push( &quot;bam&quot; );  </span><br><span class="line">    console.log( arr ); </span><br><span class="line">&#125; </span><br><span class="line">foo( &quot;bar&quot;, &quot;baz&quot; ); &#x2F;&#x2F; [&quot;bar&quot;,&quot;baz&quot;,&quot;bam&quot;]</span><br><span class="line">&#x2F;&#x2F;工具函数 slice(..) 经常被用于这类转换，slice() 返回参数列表（上例中是一个类数组）的一个数组复本。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;用 ES6 中的内置工具函数 Array.from(..) 也能实现同样的功能：</span><br><span class="line">var arr &#x3D; Array.from( arguments ); </span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>    
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> arguments <span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> <span class="token string">"bam"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> arr <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token function">foo</span><span class="token punctuation">(</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token string">"baz"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ["bar","baz","bam"]</span>
+<span class="token comment" spellcheck="true">//工具函数 slice(..) 经常被用于这类转换，slice() 返回参数列表（上例中是一个类数组）的一个数组复本。</span>
 
+<span class="token comment" spellcheck="true">//用 ES6 中的内置工具函数 Array.from(..) 也能实现同样的功能：</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span> arguments <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ol>
 <li>字符串和数组很相似，它是类数组，都有 length 属性以及 indexOf(..)（从 ES5 开始数组支持此方法）和 concat(..) 方法</li>
 <li>JavaScript 中字符串是不可变的，而数组是可变的。字符串不可变是指字符串的成员函数不会改变其原始值，而是创建并返回一个新的字符 串。而数组的成员函数都是在其原始值上进行操作。</li>
 <li>许多数组函数用来处理字符串很方便。虽然字符串没有这些函数，但可以通过“借用”数 组的非变更方法来处理字符串</li>
 <li>另一个不同点在于字符串反转（JavaScript 面试常见问题）。数组有一个字符串没有的可变<br>更成员函数 reverse()。我们无法“借用”数组的可变更成员函数，因为字符串是不可变的</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;字符串反转一个变通（破解）的办法是先将字符串转换为数组，待处理完后再将结果转换回字符串</span><br><span class="line">var c &#x3D; a      </span><br><span class="line">    .split( &quot;&quot; )      &#x2F;&#x2F; 将a的值转换为字符数组    </span><br><span class="line">    .reverse()       &#x2F;&#x2F; 将数组中的字符进行倒转   </span><br><span class="line">    .join( &quot;&quot; );    &#x2F;&#x2F; 将数组中的字符拼接回字符串   </span><br><span class="line"></span><br><span class="line">c; &#x2F;&#x2F; &quot;oof&quot;</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//字符串反转一个变通（破解）的办法是先将字符串转换为数组，待处理完后再将结果转换回字符串</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> a      
+    <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">// 将a的值转换为字符数组    </span>
+    <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">// 将数组中的字符进行倒转   </span>
+    <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 将数组中的字符拼接回字符串   </span>
 
+c<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "oof"</span>
+</code></pre>
 <ol>
 <li>如果需要经常以字符数组的方式来处理字符串的话，倒不如直接使用数组。这样就不用在 字符串和数组之间来回折腾。可以在需要时使用 join(“”) 将字符数组转换为字符串</li>
 </ol>
@@ -528,22 +574,28 @@
 <li>JavaScript 中的“整数”就是没有小数的十进制数。所以 42.0 即等同于“整数”42。</li>
 </ol>
 <h3 id="数字语法"><a href="#数字语法" class="headerlink" title="数字语法"></a>数字语法</h3><p>特别大和特别小的数字默认用指数格式显示，与 toExponential() 函数的输出结果相同。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a;                  &#x2F;&#x2F; 50000000000 </span><br><span class="line">a.toExponential();  &#x2F;&#x2F; &quot;5e+10&quot; </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">a<span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">// 50000000000 </span>
+a<span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// "5e+10" </span>
+</code></pre>
 <p>tofixed(..) 方法可指定小数部分的显示位数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42.59; </span><br><span class="line">a.toFixed( 0 ); &#x2F;&#x2F; &quot;43&quot; </span><br><span class="line">a.toFixed( 4 ); &#x2F;&#x2F; &quot;42.5900&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">42.toFixed( 3 );    &#x2F;&#x2F; SyntaxError 无效语法</span><br><span class="line">42 .toFixed(3); &#x2F;&#x2F; &quot;42.000&quot; 空格有效</span><br><span class="line">42..toFixed( 3 );   &#x2F;&#x2F; &quot;42.000&quot;  </span><br><span class="line">&#x2F;&#x2F;第一个 . 被视为 number 的一部分，第二个 . 是属性访问 运算符</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42.59</span><span class="token punctuation">;</span> 
+a<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "43" </span>
+a<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span> <span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "42.5900"</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">42</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// SyntaxError 无效语法</span>
+<span class="token number">42</span> <span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "42.000" 空格有效</span>
+<span class="token number">42</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// "42.000"  </span>
+<span class="token comment" spellcheck="true">//第一个 . 被视为 number 的一部分，第二个 . 是属性访问 运算符</span>
+</code></pre>
 <p>toPrecision(..) 方法用来指定有效数位的显示位数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42.59; </span><br><span class="line">a.toPrecision( 1 ); &#x2F;&#x2F; &quot;4e+1&quot;</span><br><span class="line">a.toPrecision( 2 ); &#x2F;&#x2F; &quot;43&quot;</span><br><span class="line">a.toPrecision( 3 ); &#x2F;&#x2F; &quot;42.6&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="较小数值"><a href="#较小数值" class="headerlink" title="较小数值"></a>较小数值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3; &#x2F;&#x2F; false</span><br><span class="line">&#x2F;&#x2F;二进制浮点数中的 0.1 和 0.2 并不是十分精确，它们相加的结果并非刚好等于 0.3，而是一个比较接近的数字 0.30000000000000004，所以条件判断结果为 false。</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42.59</span><span class="token punctuation">;</span> 
+a<span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "4e+1"</span>
+a<span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "43"</span>
+a<span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "42.6"</span>
+</code></pre>
+<h3 id="较小数值"><a href="#较小数值" class="headerlink" title="较小数值"></a>较小数值</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">===</span> <span class="token number">0.3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+<span class="token comment" spellcheck="true">//二进制浮点数中的 0.1 和 0.2 并不是十分精确，它们相加的结果并非刚好等于 0.3，而是一个比较接近的数字 0.30000000000000004，所以条件判断结果为 false。</span>
+</code></pre>
 <p><strong>如何做到完全精确</strong></p>
 <p>也就是怎样来判断 0.1 + 0.2 和 0.3 是否相等？</p>
 <p>最常见的方法是设置一个误差范围值，通常称为“机器精度”（machine epsilon）， 对 JavaScript 的数字来说，这个值通常是 2^-52</p>
@@ -551,14 +603,27 @@
 <li>从 ES6 开始，该值定义在 Number.EPSILON 中，我们可以直接拿来用</li>
 <li>为 ES6 之前 的版本写 polyﬁll：</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (!Number.EPSILON) &#123;  </span><br><span class="line">    Number.EPSILON &#x3D; Math.pow(2,-52);    </span><br><span class="line">&#125;</span><br><span class="line">可以使用 Number.EPSILON 来比较两个数字是否相等（在指定的误差范围内）：</span><br><span class="line">function numbersCloseEnoughToEqual(n1,n2) &#123;   </span><br><span class="line">    return Math.abs( n1 - n2 ) &lt; Number.EPSILON; </span><br><span class="line">&#125; </span><br><span class="line"> var a &#x3D; 0.1 + 0.2;</span><br><span class="line"> var b &#x3D; 0.3; </span><br><span class="line"> numbersCloseEnoughToEqual( a, b );                  &#x2F;&#x2F; true </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Number<span class="token punctuation">.</span>EPSILON<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+    Number<span class="token punctuation">.</span>EPSILON <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">52</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+可以使用 Number<span class="token punctuation">.</span>EPSILON 来比较两个数字是否相等（在指定的误差范围内）：
+<span class="token keyword">function</span> <span class="token function">numbersCloseEnoughToEqual</span><span class="token punctuation">(</span>n1<span class="token punctuation">,</span>n2<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span> n1 <span class="token operator">-</span> n2 <span class="token punctuation">)</span> <span class="token operator">&lt;</span> Number<span class="token punctuation">.</span>EPSILON<span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+ <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">0.3</span><span class="token punctuation">;</span> 
+ <span class="token function">numbersCloseEnoughToEqual</span><span class="token punctuation">(</span> a<span class="token punctuation">,</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">// true </span>
+</code></pre>
 <h3 id="整数检测"><a href="#整数检测" class="headerlink" title="整数检测"></a>整数检测</h3><p>要检测一个值是否是整数，可以使用 ES6 中的 Number.isInteger(..) 方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number.isInteger( 42 );     &#x2F;&#x2F; true</span><br><span class="line">Number.isInteger( 42.000 ); &#x2F;&#x2F; true </span><br><span class="line">Number.isInteger( 42.3 );   &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span> <span class="token number">42</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span> <span class="token number">42.000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true </span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span> <span class="token number">42.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
 <p>要检测一个值是否是安全的整数，可以使用 ES6 中的 Number.isSafeInteger(..) 方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number.isSafeInteger( Number.MAX_SAFE_INTEGER );    &#x2F;&#x2F; true</span><br><span class="line">Number.isSafeInteger( Math.pow( 2, 53 ) );          &#x2F;&#x2F; false </span><br><span class="line">Number.isSafeInteger( Math.pow( 2, 53 ) - 1 );      &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">Number<span class="token punctuation">.</span><span class="token function">isSafeInteger</span><span class="token punctuation">(</span> Number<span class="token punctuation">.</span>MAX_SAFE_INTEGER <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isSafeInteger</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">53</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">// false </span>
+Number<span class="token punctuation">.</span><span class="token function">isSafeInteger</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">53</span> <span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
 <h2 id="特殊数值"><a href="#特殊数值" class="headerlink" title="特殊数值"></a>特殊数值</h2><h3 id="不是值的值"><a href="#不是值的值" class="headerlink" title="不是值的值"></a>不是值的值</h3><ol>
 <li>undefined 类型只有一个值，即 undefined。undefined 指没有值</li>
 <li>null 类型也只有一个值，即 null。它们的名 称既是类型也是值。null 指空值</li>
@@ -567,75 +632,117 @@
 </ol>
 <h4 id="void-运算符"><a href="#void-运算符" class="headerlink" title="void 运算符"></a>void 运算符</h4><p>undefined 是一个内置标识符（除非被重新定义），它的值为 undefined， 通过 void 运算符即可得到该值</p>
 <p>表达式 void ___ 没有返回值，因此返回结果是 undefined。按惯例我们用 void 0 来获得 undefined，void 并不改变表达式的结果， 只是让表达式不返回值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42; </span><br><span class="line">console.log( void a, a ); &#x2F;&#x2F; undefined 42</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">void</span> a<span class="token punctuation">,</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined 42</span>
+</code></pre>
 <h3 id="特殊的数字"><a href="#特殊的数字" class="headerlink" title="特殊的数字"></a>特殊的数字</h3><ol>
 <li><h4 id="不是数字的数字"><a href="#不是数字的数字" class="headerlink" title="不是数字的数字"></a>不是数字的数字</h4></li>
 </ol>
 <p>如果数学运算的操作数不是数字类型（或者无法解析为常规的十进制或十六进制数字）， 就无法返回一个有效的数字，这种情况下返回值为 NaN。</p>
 <p>NaN 意指“不是一个数字”（not a number），这个名字容易引起误会。NaN是一个“警戒值”（sentinel value，有特殊用途的常规值），用于指出数字类型中的错误 情况，即“执行数学运算没有成功，这是失败后返回的结果”。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 2 &#x2F; &quot;foo&quot;;      &#x2F;&#x2F; NaN </span><br><span class="line">typeof a &#x3D;&#x3D;&#x3D; &quot;number&quot;;  &#x2F;&#x2F; true   NaN仍然是数字类型</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token string">"foo"</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">// NaN </span>
+<span class="token keyword">typeof</span> a <span class="token operator">===</span> <span class="token string">"number"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// true   NaN仍然是数字类型</span>
+</code></pre>
 <p>NaN 是一个特殊值，它和自身不相等，是唯一一个非自反（自反，reﬂexive，即 x === x 不 成立）的值。而 NaN != NaN 为 true。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 2 &#x2F; &quot;foo&quot;; </span><br><span class="line">a &#x3D;&#x3D; NaN;   &#x2F;&#x2F; false</span><br><span class="line">a &#x3D;&#x3D;&#x3D; NaN;  &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token string">"foo"</span><span class="token punctuation">;</span> 
+a <span class="token operator">==</span> <span class="token number">NaN</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// false</span>
+a <span class="token operator">===</span> <span class="token number">NaN</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
 <p>可以使用内建的全局工具函数 isNaN(..) 来判断一个值是否是 NaN</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 2 &#x2F; &quot;foo&quot;; </span><br><span class="line">isNaN( a ); &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">/</span> <span class="token string">"foo"</span><span class="token punctuation">;</span> 
+<span class="token function">isNaN</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
 <p>isNaN(..) 有一个严重的缺陷，它的检查方式过于死板，就 是“检查参数是否不是 NaN，也不是数字”。但是这样做的结果并不太准确</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var b &#x3D; &quot;foo&quot;; </span><br><span class="line">window.isNaN( b ); &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"foo"</span><span class="token punctuation">;</span> 
+window<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
 <p>解决这个问题可以使用ES6工具函数 Number.isNaN(..)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Number.isNaN(..)实现原理</span><br><span class="line">return (typeof n &#x3D;&#x3D;&#x3D; &quot;number&quot; &amp;&amp;  window.isNaN( n ));   </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">  <span class="token comment" spellcheck="true">// Number.isNaN(..)实现原理</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> n <span class="token operator">===</span> <span class="token string">"number"</span> <span class="token operator">&amp;&amp;</span>  window<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span> n <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+</code></pre>
 <p>还有一个方法是利用 NaN 不等于自身这个特点。NaN 是 JavaScript 中唯 一一个不等于自身的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (!Number.isNaN) &#123;    </span><br><span class="line">    Number.isNaN &#x3D; function(n) &#123;     </span><br><span class="line">        return n !&#x3D;&#x3D; n;   </span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Number<span class="token punctuation">.</span>isNaN<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>    
+    Number<span class="token punctuation">.</span>isNaN <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>     
+        <span class="token keyword">return</span> n <span class="token operator">!==</span> n<span class="token punctuation">;</span>   
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <ol>
 <li><h4 id="无穷数"><a href="#无穷数" class="headerlink" title="无穷数"></a>无穷数</h4></li>
 </ol>
 <p>JavaScript 使用有限数字表示法，所以和纯粹的数学运算不同，JavaScript 的运算结果有可能溢出，此时结果为 Infinity 或者 -Infinity。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 1 &#x2F; 0;  &#x2F;&#x2F; Infinity</span><br><span class="line">var b &#x3D; -1 &#x2F; 0; &#x2F;&#x2F; -Infinity</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// Infinity</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -Infinity</span>
+</code></pre>
 <p>计算结果一旦溢出为无穷数（inﬁnity）就无法再得到有穷数</p>
 <p>Infinity/ Infinity 是一个未定义操作，结果为 NaN。有穷正数除以 Infinity，结果是 0。</p>
 <ol>
 <li><h4 id="零值"><a href="#零值" class="headerlink" title="零值"></a>零值</h4></li>
 </ol>
 <p>JavaScript 有一个常规的 0（也叫作 +0）和一个 -0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 0 &#x2F; -3; &#x2F;&#x2F; -0 </span><br><span class="line">var b &#x3D; 0 * -3; &#x2F;&#x2F; -0   加法和减法运算不会得到负</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -0 </span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -0   加法和减法运算不会得到负</span>
+</code></pre>
 <p>对负零进行字符串化会返回 “0”，如果反过来将其从字符串转换为数字，得到的结果是准确的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 0 &#x2F; -3; </span><br><span class="line">a + &quot;&quot;;          &#x2F;&#x2F; &quot;0&quot; </span><br><span class="line">+&quot;-0&quot;;           &#x2F;&#x2F; -0 </span><br><span class="line">&#x2F;&#x2F;JSON.stringify(-0) 返回 &quot;0&quot;，而 JSON.parse(&quot;-0&quot;) 返回 -0</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-0 &#x3D;&#x3D; 0;    &#x2F;&#x2F; true</span><br><span class="line">&#x2F;&#x2F;区分-0和0的原理</span><br><span class="line"> n &#x3D; Number( n );     </span><br><span class="line"> return (n &#x3D;&#x3D;&#x3D; 0) &amp;&amp; (1 &#x2F; n &#x3D;&#x3D;&#x3D; -Infinity); </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">;</span> 
+a <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">// "0" </span>
+<span class="token operator">+</span><span class="token string">"-0"</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">// -0 </span>
+<span class="token comment" spellcheck="true">//JSON.stringify(-0) 返回 "0"，而 JSON.parse("-0") 返回 -0</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">-</span><span class="token number">0</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">//区分-0和0的原理</span>
+ n <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span> n <span class="token punctuation">)</span><span class="token punctuation">;</span>     
+ <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> n <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
 <p><strong>为什么要-0</strong></p>
 <p>有些应用程序中的数据需要以级数形式来表示（比如动画帧的移动速度），数字的符号位 （sign）用来代表其他信息（比如移动的方向）。此时如果一个值为 0 的变量失去了它的符号位，它的方向信息就会丢失。所以保留 0 值的符号位可以防止这类情况发生。</p>
 <h2 id="值和引用"><a href="#值和引用" class="headerlink" title="值和引用"></a>值和引用</h2><ol>
 <li><p>简单值（即标量基本类型值，scalar primitive）总是通过<strong>值复制</strong>的方式来赋值 / 传递，包括 null、undefined、字符串、数字、布尔和 ES6 中的 symbol。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 2; </span><br><span class="line">var b &#x3D; a; &#x2F;&#x2F; b是a的值的一个副本</span><br><span class="line">b++;</span><br><span class="line">a; &#x2F;&#x2F; 2</span><br><span class="line">b; &#x2F;&#x2F; 3 </span><br></pre></td></tr></table></figure></li>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// b是a的值的一个副本</span>
+b<span class="token operator">++</span><span class="token punctuation">;</span>
+a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
+b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3 </span>
+</code></pre>
+</li>
 <li><p>复合值（compound value）——对象（包括数组和封装对象，参见第 3 章）和函数，则总是通过<strong>引用复制</strong>的方式来赋值 / 传递。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var c &#x3D; [1,2,3];</span><br><span class="line">var d &#x3D; c; &#x2F;&#x2F; d是[1,2,3]的一个引用 d.push( 4 );</span><br><span class="line">c; &#x2F;&#x2F; [1,2,3,4]</span><br><span class="line">d; &#x2F;&#x2F; [1,2,3,4]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// d是[1,2,3]的一个引用 d.push( 4 );</span>
+c<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [1,2,3,4]</span>
+d<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [1,2,3,4]</span>
+</code></pre>
 <p>由于引用指向的是值本身而非变量，所以一个引用无法更改另一个引用的指向</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [1,2,3]; </span><br><span class="line">var b &#x3D; a; </span><br><span class="line">b &#x3D; [4,5,6];</span><br><span class="line">a; &#x2F;&#x2F; [1,2,3]</span><br><span class="line">b; &#x2F;&#x2F; [4,5,6]</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span> 
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [1,2,3]</span>
+b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [4,5,6]</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//函数传参时不能通过引用 x 来更改引用 a 的指向，只能更改 a 和 x 共同指向的值。</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 
+    x<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> <span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>   
+    x<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [1,2,3,4] </span>
 
+    <span class="token comment" spellcheck="true">// 然后   </span>
+    x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
+    x<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> <span class="token number">7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    x<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [4,5,6,7]</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token function">foo</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span> 
 
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;函数传参时不能通过引用 x 来更改引用 a 的指向，只能更改 a 和 x 共同指向的值。</span><br><span class="line">function foo(x) &#123; </span><br><span class="line">    x.push( 4 );   </span><br><span class="line">    x; &#x2F;&#x2F; [1,2,3,4] </span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 然后   </span><br><span class="line">    x &#x3D; [4,5,6];  </span><br><span class="line">    x.push( 7 );  </span><br><span class="line">    x; &#x2F;&#x2F; [4,5,6,7]</span><br><span class="line">    &#125; </span><br><span class="line">var a &#x3D; [1,2,3]; </span><br><span class="line">foo( a ); </span><br><span class="line"></span><br><span class="line">a; &#x2F;&#x2F; 是[1,2,3,4]，不是 [4,5,6,7]</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;传递的是指向数字对象的引用复本，但我们并不能通过它来更改其 中的基本类型值,原因是标量基本类型值是不可更改的，除非创建一个包含新值的数字对象。</span><br><span class="line">function foo(x) &#123;  </span><br><span class="line">    x &#x3D; x + 1;     </span><br><span class="line">    x; &#x2F;&#x2F; 3  </span><br><span class="line">    &#125; </span><br><span class="line"> var a &#x3D; 2; </span><br><span class="line"> var b &#x3D; new Number( a ); &#x2F;&#x2F; Object(a)也一样 </span><br><span class="line"> foo( b ); console.log( b ); &#x2F;&#x2F; 是2，不是 3</span><br></pre></td></tr></table></figure></li>
+a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 是[1,2,3,4]，不是 [4,5,6,7]</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//传递的是指向数字对象的引用复本，但我们并不能通过它来更改其 中的基本类型值,原因是标量基本类型值是不可更改的，除非创建一个包含新值的数字对象。</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+    x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>     
+    x<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3  </span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+ <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+ <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Number</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Object(a)也一样 </span>
+ <span class="token function">foo</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 是2，不是 3</span>
+</code></pre>
+</li>
 </ol>
 <p>我们无法自行决定使用值复制还是引用复制，一切由值的类型来决定。如果想要改变传递的类型，有以下两种方法</p>
 <ol>
@@ -662,20 +769,24 @@
 <li>Symbol()——ES6 中新加入的！<br>实际上，它们就是<strong>内建函数</strong>。</li>
 </ul>
 <h2 id="内部属性-Class"><a href="#内部属性-Class" class="headerlink" title="内部属性 [[Class]]"></a>内部属性 [[Class]]</h2><p>所有 typeof 返回值为 “object” 的对象（如数组）都包含一个内部属性 [[Class]]（我们可 以把它看作一个内部的分类，而非传统的面向对象意义上的类）。这个属性无法直接访问， 一般通过 Object.prototype.toString(..) 来查看。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call( [1,2,3] ); &#x2F;&#x2F; &quot;[object Array]&quot; </span><br><span class="line"></span><br><span class="line">Object.prototype.toString.call( &#x2F;regex-literal&#x2F;i ); &#x2F;&#x2F; &quot;[object RegExp]</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript">Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "[object Array]" </span>
 
+Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token regex">/regex-literal/i</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "[object RegExp]</span>
+</code></pre>
 <h2 id="封装对象包装"><a href="#封装对象包装" class="headerlink" title="封装对象包装"></a>封装对象包装</h2><p><strong>封装对象</strong>（object wrapper）扮演着十分重要的角色。由于基本类型值没有.length 和 .toString() 这样的属性和方法，需要通过封装对象才能访问，此时 <strong>JavaScript 会自动为基本类型值包装一个封装对象</strong></p>
 <p>一般情况下，我们不需要直接使用封装对象。最好的办法是让 JavaScript 引擎自己决定什 么时候应该使用封装对象</p>
 <h2 id="拆封"><a href="#拆封" class="headerlink" title="拆封"></a>拆封</h2><ol>
 <li>如果想要得到封装对象中的基本类型值，可以使用 valueOf() 函数</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; new String( &quot;abc&quot; ); </span><br><span class="line">a.valueOf(); &#x2F;&#x2F; &quot;abc&quot; </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span> <span class="token string">"abc"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+a<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "abc" </span>
+</code></pre>
 <ol>
 <li>在需要用到封装对象中的基本类型值的地方会发生隐式拆封。（即强制类型转换）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; new String( &quot;abc&quot; );</span><br><span class="line">var b &#x3D; a + &quot;&quot;; &#x2F;&#x2F; b的值为&quot;abc&quot; </span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span> <span class="token string">"abc"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// b的值为"abc" </span>
+</code></pre>
 <h1 id="4-强制类型转换"><a href="#4-强制类型转换" class="headerlink" title="4.强制类型转换"></a>4.强制类型转换</h1><blockquote>
 <ol>
 <li>JavaScript 的数据类型之间的转换，即强制类型转换：包括显式和隐式。</li>
@@ -690,14 +801,17 @@
 <p>基本类型值的字符串化规则为：null 转换为 “null”，undefined 转换为 “undefined”，true 转换为 “true”。数字的字符串化则遵循通用规则，不过极小和极大的数字使用指数形式</p>
 <p>对普通对象来说，除非自行定义，否则 toString()（Object.prototype.toString()）返回 内部属性 [[Class]] 的值，如 “[object Object]”。</p>
 <p>数组的默认 toString() 方法经过了重新定义，将所有单元字符串化以后再用 “,” 连接起 来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [1,2,3]; </span><br><span class="line">a.toString(); &#x2F;&#x2F; &quot;1,2,3&quot;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "1,2,3"</span>
+</code></pre>
 <p>工具函数 JSON.stringify(..)</p>
 <p>(1) 字符串、数字、布尔值和 null 的 JSON.stringify(..) 规则与 ToString 基本相同。</p>
 <p>(2) 如果传递给 JSON.stringify(..) 的对象中定义了 toJSON() 方法，那么该方法会在字符 串化前调用，以便将对象转换为安全的 JSON 值。</p>
 <h3 id="ToNumber"><a href="#ToNumber" class="headerlink" title="ToNumber"></a>ToNumber</h3><p>将非数字值当作数字来使用，其中 true 转换为 1，false 转换为 0。undefined 转换为 NaN，null 转换为 0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number( &quot;&quot; );               &#x2F;&#x2F; 0 </span><br><span class="line">Number( [] );               &#x2F;&#x2F; 0 </span><br><span class="line">Number( [ &quot;abc&quot; ] );        &#x2F;&#x2F; NaN</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">Number</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// 0 </span>
+<span class="token function">Number</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// 0 </span>
+<span class="token function">Number</span><span class="token punctuation">(</span> <span class="token punctuation">[</span> <span class="token string">"abc"</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// NaN</span>
+</code></pre>
 <h3 id="ToBoolean"><a href="#ToBoolean" class="headerlink" title="ToBoolean"></a>ToBoolean</h3><ol>
 <li><h4 id="假值"><a href="#假值" class="headerlink" title="假值"></a>假值</h4></li>
 <li><p>undefined</p>
@@ -722,14 +836,18 @@
 <li><h4 id="真值"><a href="#真值" class="headerlink" title="真值"></a>真值</h4></li>
 </ol>
 <p>真值就是假值列表之外的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;false&quot;; </span><br><span class="line">var b &#x3D; &quot;0&quot;; </span><br><span class="line">var c &#x3D; &quot;&#39;&#39;&quot;; </span><br><span class="line">var d &#x3D; Boolean( a &amp;&amp; b &amp;&amp; c ); </span><br><span class="line">d;&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [];             &#x2F;&#x2F; 空数组——是真值还是假值？ </span><br><span class="line">var b &#x3D; &#123;&#125;;             &#x2F;&#x2F; 空对象——是真值还是假值？</span><br><span class="line">var c &#x3D; function()&#123;&#125;;   &#x2F;&#x2F; 空函数——是真值还是假值？ </span><br><span class="line">var d &#x3D; Boolean( a &amp;&amp; b &amp;&amp; c ); </span><br><span class="line">d;&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"false"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"0"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token string">"''"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span> a <span class="token operator">&amp;&amp;</span> b <span class="token operator">&amp;&amp;</span> c <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+d<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">// 空数组——是真值还是假值？ </span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">// 空对象——是真值还是假值？</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 空函数——是真值还是假值？ </span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span> a <span class="token operator">&amp;&amp;</span> b <span class="token operator">&amp;&amp;</span> c <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+d<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true</span>
+</code></pre>
 <p>真值列表可以无限长，无法一一列举，所以我们只能用假值列表作为参考</p>
 <h2 id="显式强制类型转换"><a href="#显式强制类型转换" class="headerlink" title="显式强制类型转换"></a>显式强制类型转换</h2><h3 id="字符串和数字之间的显式转换"><a href="#字符串和数字之间的显式转换" class="headerlink" title="字符串和数字之间的显式转换"></a>字符串和数字之间的显式转换</h3><ol>
 <li>String(..) 遵循前面讲过的 ToString 规则，将值转换为字符串基本类型。</li>
@@ -737,37 +855,38 @@
 <li>一元运算符 - 和 + 会将操作 数显式强制类型转换为数字</li>
 </ol>
 <h4 id="日期显式转换为数字"><a href="#日期显式转换为数字" class="headerlink" title="日期显式转换为数字"></a>日期显式转换为数字</h4><p>一元运算符 + 的另一个常见用途是将日期（Date）对象强制类型转换为数字，返回结果为 Unix 时间戳，以微秒为单位</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timestamp &#x3D; +new Date();</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timestamp &#x3D; new Date().getTime(); </span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timestamp &#x3D; Date.now();</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> timestamp <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> timestamp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> timestamp <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h4 id="运算符"><a href="#运算符" class="headerlink" title="~ 运算符"></a>~ 运算符</h4><p>~ 运算符（即字位操作“非”）</p>
 <p>~ 返回 2 的补码，所以~x 大致等同于 -(x+1)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~42;    &#x2F;&#x2F; -(42+1) &#x3D;&#x3D;&gt; -43</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">~</span><span class="token number">42</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// -(42+1) ==> -43</span>
+</code></pre>
 <p>~ 和 indexOf() 一起可以将结果强制类型转换（实际 上仅仅是转换）为真 / 假值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;Hello World&quot;; </span><br><span class="line">if (a.indexOf( &quot;lo&quot; ) &gt;&#x3D; 0) &#123;   &#x2F;&#x2F; true     &#x2F;&#x2F; 找到匹配！ &#125; </span><br><span class="line">if (a.indexOf( &quot;ol&quot; ) &#x3D;&#x3D; -1) &#123;  &#x2F;&#x2F; true     &#x2F;&#x2F; 没有找到匹配！ &#125;</span><br><span class="line"></span><br><span class="line">&gt;&#x3D; 0 和 &#x3D;&#x3D; -1 这样的写法不是很好，称为“抽象渗漏”，意思是在代码中暴露了底层的实 现细节，这里是指用 -1 作为失败时的返回值，这些细节应该被屏蔽掉。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span> 
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"lo"</span> <span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// true     // 找到匹配！ &amp;#125; </span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"ol"</span> <span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// true     // 没有找到匹配！ &amp;#125;</span>
 
+<span class="token operator">>=</span> <span class="token number">0</span> 和 <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> 这样的写法不是很好，称为“抽象渗漏”，意思是在代码中暴露了底层的实 现细节，这里是指用 <span class="token operator">-</span><span class="token number">1</span> 作为失败时的返回值，这些细节应该被屏蔽掉。
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span> 
+<span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"lo"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// -4   &lt;-- 真值! </span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"lo"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// true     // 找到匹配！ &amp;#125;</span>
 
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;Hello World&quot;; </span><br><span class="line">~a.indexOf( &quot;lo&quot; );         &#x2F;&#x2F; -4   &lt;-- 真值! </span><br><span class="line">if (~a.indexOf( &quot;lo&quot; )) &#123;   &#x2F;&#x2F; true     &#x2F;&#x2F; 找到匹配！ &#125;</span><br><span class="line"></span><br><span class="line">~a.indexOf( &quot;ol&quot; );         &#x2F;&#x2F; 0    &lt;-- 假值! </span><br><span class="line">!~a.indexOf( &quot;ol&quot; );        &#x2F;&#x2F; true </span><br><span class="line">if (!~a.indexOf( &quot;ol&quot; )) &#123;  &#x2F;&#x2F; true     &#x2F;&#x2F; 没有找到匹配！ &#125;</span><br></pre></td></tr></table></figure>
-
+<span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"ol"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// 0    &lt;-- 假值! </span>
+<span class="token operator">!</span><span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"ol"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// true </span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span> <span class="token string">"ol"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// true     // 没有找到匹配！ &amp;#125;</span>
+</code></pre>
 <p>如果 indexOf(..) 返回 -1，~ 将其转换为假值 0，其他情况一律转换为真值。</p>
 <h3 id="显式解析数字字符串"><a href="#显式解析数字字符串" class="headerlink" title="显式解析数字字符串"></a>显式解析数字字符串</h3><p>解析允许字符串中含有非数字字符，解析按从左到右的顺序，如果遇到非数字字符就停 止。而转换不允许出现非数字字符，否则会失败并返回 NaN。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var b &#x3D; &quot;42px&quot;; </span><br><span class="line">parseInt( b );  &#x2F;&#x2F; 42</span><br><span class="line"></span><br><span class="line">parseInt(..) 针对的是字符串值。向 parseInt(..) 传递数字和其他类型的参数是 没有用的，比如 true、function()&#123;...&#125; 和 [1,2,3]。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"42px"</span><span class="token punctuation">;</span> 
+<span class="token function">parseInt</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 42</span>
 
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 针对的是字符串值。向 <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 传递数字和其他类型的参数是 没有用的，比如 <span class="token boolean">true</span>、<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">...</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 和 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>。
+</code></pre>
 <h3 id="显式转换为布尔值"><a href="#显式转换为布尔值" class="headerlink" title="显式转换为布尔值"></a>显式转换为布尔值</h3><ol>
 <li>Boolean(..) 是显式的，但并不常用</li>
 <li>显式强制类型转换为布尔值最常用的方法是 !!，因为第二个 ! 会将结果反转回原值</li>
@@ -777,19 +896,34 @@
 <li><strong>数字强制类型转换为字符串</strong></li>
 </ol>
 <p>如果 + 的其中一个操作数是字符串， 则执行字符串拼接；否则执行数字加法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42; </span><br><span class="line">var b &#x3D; a + &quot;&quot;; </span><br><span class="line"></span><br><span class="line">b; &#x2F;&#x2F; &quot;42&quot;</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span> 
 
+b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "42"</span>
+</code></pre>
 <p>a + “”（隐式）和前面的String(a)（显式）之间有一个细微的差别需要注意。根据 ToPrimitive 抽象操作规则，a + “” 会对 a 调用 valueOf() 方法，然后通过 ToString 抽象 操作将返回值转换为字符串。而 String(a) 则是直接调用 ToString()。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#123;   </span><br><span class="line">    valueOf: function() &#123; return 42; &#125;,  </span><br><span class="line">    toString: function() &#123; return 4; &#125; &#125;; </span><br><span class="line"> a + &quot;&quot;;         &#x2F;&#x2F; &quot;42&quot; </span><br><span class="line">String( a );    &#x2F;&#x2F; &quot;4&quot;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   
+    valueOf<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>  
+    toString<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+ a <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// "42" </span>
+<span class="token function">String</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// "4"</span>
+</code></pre>
 <ol>
 <li><strong>字符串强制类型转换为数字的情况</strong></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;3.14&quot;; </span><br><span class="line">var b &#x3D; a - 0; </span><br><span class="line">b; &#x2F;&#x2F; 3.14</span><br><span class="line"></span><br><span class="line">- 是数字减法运算符，因此 a - 0 会将 a 强制类型转换为数字。也可以使用 a * 1 和 a &#x2F; 1，因为这两个运算符也只适用于数字，只不过这样的用法不太常见。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"3.14"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">-</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3.14</span>
 
+<span class="token operator">-</span> 是数字减法运算符，因此 a <span class="token operator">-</span> <span class="token number">0</span> 会将 a 强制类型转换为数字。也可以使用 a <span class="token operator">*</span> <span class="token number">1</span> 和 a <span class="token operator">/</span> <span class="token number">1</span>，因为这两个运算符也只适用于数字，只不过这样的用法不太常见。
+</code></pre>
 <p>对象的 - 操作与 + 类似</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [3];</span><br><span class="line">var b &#x3D; [1]; </span><br><span class="line">a - b; &#x2F;&#x2F; 2</span><br><span class="line"></span><br><span class="line">为了执行减法运算，a 和 b 都需要被转换为数字，它们首先被转换为字符串（通过强制类型转换toString()），然后再转换为数字。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+a <span class="token operator">-</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
 
+为了执行减法运算，a 和 b <span class="token function">都需要被转换为数字，它们首先被转换为字符串（通过强制类型转换toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>），然后再转换为数字。
+</code></pre>
 <h3 id="隐式强制类型转换为布尔值"><a href="#隐式强制类型转换为布尔值" class="headerlink" title="隐式强制类型转换为布尔值"></a>隐式强制类型转换为布尔值</h3><ul>
 <li>if (..) 语句中的条件判断表达式。</li>
 <li>for ( .. ; .. ; .. ) 语句中的条件判断表达式（第二个）。</li>
@@ -798,15 +932,26 @@
 <li>逻辑运算符 ||（逻辑或）和 &amp;&amp;（逻辑与）左边的操作数（作为条件判断表达式）。</li>
 </ul>
 <h3 id="和-amp-amp"><a href="#和-amp-amp" class="headerlink" title="|| 和 &amp;&amp;"></a>|| 和 &amp;&amp;</h3><p>在JavaScript 中的表现也和在其他语言中不太一样，“逻辑运算符”，因为这不太准确。称它们为“选择器运算符”更恰当。它们的返回值是两个操作数中的一个（且仅一个）。即<strong>选择两个操作数中的一个，然后返回它的值</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42; </span><br><span class="line">var b &#x3D; &quot;abc&quot;;</span><br><span class="line">var c &#x3D; null; </span><br><span class="line">a || b;     &#x2F;&#x2F; 42  </span><br><span class="line">a &amp;&amp; b;     &#x2F;&#x2F; &quot;abc&quot; </span><br><span class="line"></span><br><span class="line">c || b;     &#x2F;&#x2F; &quot;abc&quot;  </span><br><span class="line">c &amp;&amp; b;     &#x2F;&#x2F; null</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+a <span class="token operator">||</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 42  </span>
+a <span class="token operator">&amp;&amp;</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// "abc" </span>
 
+c <span class="token operator">||</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// "abc"  </span>
+c <span class="token operator">&amp;&amp;</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// null</span>
+</code></pre>
 <ol>
 <li>对于|| 来说，如果条件判断结果为true 就返回第一个操作数（a 和 c）的值，如果为 false 就返回第二个操作数（b）的值。应用赋予默认值</li>
 <li>&amp;&amp; 则相反，如果条件判断结果为 true 就返回第二个操作数（b）的值，如果为 false 就返 回第一个操作数（a 和 c）的值。应用守护运算符</li>
 </ol>
 <h3 id="符号的强制类型转换"><a href="#符号的强制类型转换" class="headerlink" title="符号的强制类型转换"></a>符号的强制类型转换</h3><p>ES6 允许 从符号到字符串的显式强制类型转换，然而隐式强制类型转换会产生错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var s1 &#x3D; Symbol( &quot;cool&quot; ); </span><br><span class="line">String( s1 );     &#x2F;&#x2F; &quot;Symbol(cool)&quot; </span><br><span class="line"></span><br><span class="line">var s2 &#x3D; Symbol( &quot;not cool&quot; );</span><br><span class="line">s2 + &quot;&quot;;      &#x2F;&#x2F; TypeError</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> s1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span> <span class="token string">"cool"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">String</span><span class="token punctuation">(</span> s1 <span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// "Symbol(cool)" </span>
 
+<span class="token keyword">var</span> s2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span> <span class="token string">"not cool"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+s2 <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">// TypeError</span>
+</code></pre>
 <h2 id="宽松相等和严格相等"><a href="#宽松相等和严格相等" class="headerlink" title="宽松相等和严格相等"></a>宽松相等和严格相等</h2><ul>
 <li>“== 检查值是否相等，=== 检查值和类型是否相等” 说法不准确</li>
 <li>正确的解释是：“**== 允许在相等比较中进行强制类型转换，而 === 不允许**。”</li>
@@ -818,15 +963,25 @@
 <li>两个对象指向同一个值时 即视为相等，不发生强制类型转换。</li>
 <li>== 在比较两个不同类型的值时会发生隐式强制类型转换，会将其中之 一或两者都转换为相同的类型后再进行比较。</li>
 </ol>
-<h4 id="字符串和数字之间的相等比较"><a href="#字符串和数字之间的相等比较" class="headerlink" title="字符串和数字之间的相等比较"></a>字符串和数字之间的相等比较</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 42;</span><br><span class="line">var b &#x3D; &quot;42&quot;; </span><br><span class="line">a &#x3D;&#x3D;&#x3D; b;    &#x2F;&#x2F; false </span><br><span class="line">a &#x3D;&#x3D; b;     &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">因为没有强制类型转换，所以 a &#x3D;&#x3D;&#x3D; b 为 false，42 和 &quot;42&quot; 不相等。</span><br><span class="line">而 a &#x3D;&#x3D; b 是宽松相等，即如果两个值的类型不同，则对其中之一或两者都进行强制类型 转换。</span><br></pre></td></tr></table></figure>
+<h4 id="字符串和数字之间的相等比较"><a href="#字符串和数字之间的相等比较" class="headerlink" title="字符串和数字之间的相等比较"></a>字符串和数字之间的相等比较</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"42"</span><span class="token punctuation">;</span> 
+a <span class="token operator">===</span> b<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// false </span>
+a <span class="token operator">==</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// true</span>
 
+因为没有强制类型转换，所以 a <span class="token operator">===</span> b 为 <span class="token boolean">false</span>，<span class="token number">42</span> 和 <span class="token string">"42"</span> 不相等。
+而 a <span class="token operator">==</span> b 是宽松相等，即如果两个值的类型不同，则对其中之一或两者都进行强制类型 转换。
+</code></pre>
 <blockquote>
 <p>(1) 如果 Type(x) 是数字，Type(y) 是字符串，则返回 x == ToNumber(y) 的结果。</p>
 <p>(2) 如果 Type(x) 是字符串，Type(y) 是数字，则返回 ToNumber(x) == y 的结果。</p>
 </blockquote>
 <h4 id="其他类型和布尔类型之间的相等比较"><a href="#其他类型和布尔类型之间的相等比较" class="headerlink" title="其他类型和布尔类型之间的相等比较"></a>其他类型和布尔类型之间的相等比较</h4><p>== 最容易出错的一个地方是 true 和 false 与其他类型之间的相等比较。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;42&quot;;</span><br><span class="line">var b &#x3D; true; </span><br><span class="line">a &#x3D;&#x3D; b; &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">将 true 强制类型转换为 1，变成 1 &#x3D;&#x3D; &quot;42&quot;，二者的 类型仍然不同，&quot;42&quot; 根据规则被强制类型转换为 42，最后变成 1 &#x3D;&#x3D; 42，结果为 false。反过来也一样</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"42"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+a <span class="token operator">==</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
 
+将 <span class="token boolean">true</span> 强制类型转换为 <span class="token number">1</span>，变成 <span class="token number">1</span> <span class="token operator">==</span> <span class="token string">"42"</span>，二者的 类型仍然不同，<span class="token string">"42"</span> 根据规则被强制类型转换为 <span class="token number">42</span>，最后变成 <span class="token number">1</span> <span class="token operator">==</span> <span class="token number">42</span>，结果为 <span class="token boolean">false</span>。反过来也一样
+</code></pre>
 <blockquote>
 <p>(1) 如果 Type(x) 是布尔类型，则返回 ToNumber(x) == y 的结果；</p>
 <p>(2) 如果 Type(y) 是布尔类型，则返回 x == ToNumber(y) 的结果。</p>
@@ -837,61 +992,78 @@
 <p>(2) 如果 x 为 undefined，y 为 null，则结果为 true。</p>
 </blockquote>
 <p>在 == 中 null 和 undefined 相等（它们也与其自身相等），除此之外其他值都不存在这种 情况。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; null; </span><br><span class="line">var b;</span><br><span class="line">a &#x3D;&#x3D; b;     &#x2F;&#x2F; true</span><br><span class="line">a &#x3D;&#x3D; false; &#x2F;&#x2F; false</span><br><span class="line">b &#x3D;&#x3D; false; &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b<span class="token punctuation">;</span>
+a <span class="token operator">==</span> b<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// true</span>
+a <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+b <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
 <p>null 和 undefined 之间的强制类型转换是安全可靠的，通过这种方式将 null 和 undefined 作为等价值来处理比较好。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; doSomething(); </span><br><span class="line">if (a &#x3D;&#x3D; null) &#123;     &#x2F;&#x2F; .. &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; doSomething(); </span><br><span class="line">if (a &#x3D;&#x3D;&#x3D; undefined || a &#x3D;&#x3D;&#x3D; null) &#123;     &#x2F;&#x2F; .. &#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// .. &amp;#125;</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">===</span> undefined <span class="token operator">||</span> a <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// .. &amp;#125;</span>
+</code></pre>
 <h4 id="对象和非对象之间的相等比较"><a href="#对象和非对象之间的相等比较" class="headerlink" title="对象和非对象之间的相等比较"></a>对象和非对象之间的相等比较</h4><blockquote>
 <p>(1) 如果 Type(x) 是字符串或数字，Type(y) 是对象，则返回 x == ToPrimitive(y) 的结果；</p>
 <p>(2) 如果 Type(x) 是对象，Type(y) 是字符串或数字，则返回 ToPromitive(x) == y 的结果。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;abc&quot;; </span><br><span class="line">var b &#x3D; Object( a );    &#x2F;&#x2F; 和new String( a )一样 </span><br><span class="line"></span><br><span class="line">a &#x3D;&#x3D;&#x3D; b;                &#x2F;&#x2F; false</span><br><span class="line">a &#x3D;&#x3D; b;                 &#x2F;&#x2F; true</span><br><span class="line">因为 b 通过 ToPromitive 进行强制类型转换（也称为“拆封”），并返回标量基本类型值 &quot;abc&quot;，与 a 相等。</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 和new String( a )一样 </span>
 
+a <span class="token operator">===</span> b<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// false</span>
+a <span class="token operator">==</span> b<span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">// true</span>
+因为 b 通过 ToPromitive 进行强制类型转换（也称为“拆封”），并返回标量基本类型值 <span class="token string">"abc"</span>，与 a 相等。
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 和Object()一样</span>
+a <span class="token operator">==</span> b<span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">// false </span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> undefined<span class="token punctuation">;</span>      
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span> c <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 和Object()一样 </span>
+c <span class="token operator">==</span> d<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// false </span>
+<span class="token keyword">var</span> e <span class="token operator">=</span> <span class="token number">NaN</span><span class="token punctuation">;</span>            
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span> e <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 和new Number( e )一样 </span>
+e <span class="token operator">==</span> f<span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">// false</span>
 
+因为没有对应的封装对象，所以 <span class="token keyword">null</span> 和 undefined 不能够被封装（boxed）， <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span> 和 <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 均返回一个常规对象。
+<span class="token number">NaN</span> 能够被封装为数字封装对象，但拆封之后 <span class="token number">NaN</span> <span class="token operator">==</span> <span class="token number">NaN</span> 返回 <span class="token boolean">false</span>，因为 <span class="token number">NaN</span> 不等于 <span class="token number">NaN</span> 
+</code></pre>
+<h3 id="比较少见的情况"><a href="#比较少见的情况" class="headerlink" title="比较少见的情况"></a>比较少见的情况</h3><h4 id="返回其他数字"><a href="#返回其他数字" class="headerlink" title="返回其他数字"></a>返回其他数字</h4><pre class=" language-javascript"><code class="language-javascript">Number<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>valueOf <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>     <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+<span class="token keyword">new</span> <span class="token class-name">Number</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// true</span>
 
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 涉及 ToPrimitive 强制类型 转换，因此会调用 <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>。
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> a <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// .. &amp;#125;</span>
+</code></pre>
+<h4 id="假值的相等比较"><a href="#假值的相等比较" class="headerlink" title="假值的相等比较"></a>假值的相等比较</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token string">"0"</span> <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">// true</span>
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// true </span>
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">// true </span>
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">// true</span>
+<span class="token string">""</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">""</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">// true </span>
+<span class="token number">0</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// true </span>
+</code></pre>
+<h4 id="极端情况"><a href="#极端情况" class="headerlink" title="极端情况"></a>极端情况</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">2</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">// true</span>
+<span class="token string">""</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// true</span>
 
+第一行中的 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> 会转换为 <span class="token string">"2"</span>，然后通过 ToNumber 转换为 <span class="token number">2</span>。第二行中的 <span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">]</span> 会直接转 换为 <span class="token string">""</span>。
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">0</span> <span class="token operator">==</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">42</span> <span class="token operator">==</span> <span class="token string">"43"</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// false </span>
+<span class="token string">"foo"</span> <span class="token operator">==</span> <span class="token number">42</span><span class="token punctuation">;</span>                       <span class="token comment" spellcheck="true">// false </span>
+<span class="token string">"true"</span> <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// false </span>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; null; </span><br><span class="line">var b &#x3D; Object( a );    &#x2F;&#x2F; 和Object()一样</span><br><span class="line">a &#x3D;&#x3D; b;                 &#x2F;&#x2F; false </span><br><span class="line">var c &#x3D; undefined;      </span><br><span class="line">var d &#x3D; Object( c );    &#x2F;&#x2F; 和Object()一样 </span><br><span class="line">c &#x3D;&#x3D; d;                &#x2F;&#x2F; false </span><br><span class="line">var e &#x3D; NaN;            </span><br><span class="line">var f &#x3D; Object( e );    &#x2F;&#x2F; 和new Number( e )一样 </span><br><span class="line">e &#x3D;&#x3D; f;                 &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">因为没有对应的封装对象，所以 null 和 undefined 不能够被封装（boxed）， Object(null) 和 Object() 均返回一个常规对象。</span><br><span class="line">NaN 能够被封装为数字封装对象，但拆封之后 NaN &#x3D;&#x3D; NaN 返回 false，因为 NaN 不等于 NaN </span><br></pre></td></tr></table></figure>
-
-<h3 id="比较少见的情况"><a href="#比较少见的情况" class="headerlink" title="比较少见的情况"></a>比较少见的情况</h3><h4 id="返回其他数字"><a href="#返回其他数字" class="headerlink" title="返回其他数字"></a>返回其他数字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.valueOf &#x3D; function() &#123;     return 3; &#125;; </span><br><span class="line">new Number( 2 ) &#x3D;&#x3D; 3;   &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">Number(2) 涉及 ToPrimitive 强制类型 转换，因此会调用 valueOf()。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (a &#x3D;&#x3D; 2 &amp;&amp; a &#x3D;&#x3D; 3) &#123;     &#x2F;&#x2F; .. &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="假值的相等比较"><a href="#假值的相等比较" class="headerlink" title="假值的相等比较"></a>假值的相等比较</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;0&quot; &#x3D;&#x3D; false;          &#x2F;&#x2F; true</span><br><span class="line">false &#x3D;&#x3D; 0;            &#x2F;&#x2F; true </span><br><span class="line">false &#x3D;&#x3D; &quot;&quot;;           &#x2F;&#x2F; true </span><br><span class="line">false &#x3D;&#x3D; [];           &#x2F;&#x2F; true</span><br><span class="line">&quot;&quot; &#x3D;&#x3D; 0;               &#x2F;&#x2F; true </span><br><span class="line">&quot;&quot; &#x3D;&#x3D; [];              &#x2F;&#x2F; true </span><br><span class="line">0 &#x3D;&#x3D; [];               &#x2F;&#x2F; true </span><br></pre></td></tr></table></figure>
-
-<h4 id="极端情况"><a href="#极端情况" class="headerlink" title="极端情况"></a>极端情况</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] &#x3D;&#x3D; ![]   &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 &#x3D;&#x3D; [2];       &#x2F;&#x2F; true</span><br><span class="line">&quot;&quot; &#x3D;&#x3D; [null];   &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">第一行中的 [2] 会转换为 &quot;2&quot;，然后通过 ToNumber 转换为 2。第二行中的 [null] 会直接转 换为 &quot;&quot;。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 &#x3D;&#x3D; &quot;\n&quot;;  &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">42 &#x3D;&#x3D; &quot;43&quot;;                        &#x2F;&#x2F; false </span><br><span class="line">&quot;foo&quot; &#x3D;&#x3D; 42;                       &#x2F;&#x2F; false </span><br><span class="line">&quot;true&quot; &#x3D;&#x3D; true;                    &#x2F;&#x2F; false </span><br><span class="line"></span><br><span class="line">42 &#x3D;&#x3D; &quot;42&quot;;                        &#x2F;&#x2F; true </span><br><span class="line">&quot;foo&quot; &#x3D;&#x3D; [ &quot;foo&quot; ];                &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
-<h4 id="完整性检查"><a href="#完整性检查" class="headerlink" title="完整性检查"></a>完整性检查</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot; &#x3D;&#x3D; 0;               &#x2F;&#x2F; true </span><br><span class="line">&quot;&quot; &#x3D;&#x3D; [];              &#x2F;&#x2F; true </span><br><span class="line">0 &#x3D;&#x3D; [];               &#x2F;&#x2F; true </span><br></pre></td></tr></table></figure>
-
+<span class="token number">42</span> <span class="token operator">==</span> <span class="token string">"42"</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">"foo"</span> <span class="token operator">==</span> <span class="token punctuation">[</span> <span class="token string">"foo"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<h4 id="完整性检查"><a href="#完整性检查" class="headerlink" title="完整性检查"></a>完整性检查</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token string">""</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">""</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">// true </span>
+<span class="token number">0</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">// true </span>
+</code></pre>
 <h4 id="安全运用隐式强制类型转换"><a href="#安全运用隐式强制类型转换" class="headerlink" title="安全运用隐式强制类型转换"></a>安全运用隐式强制类型转换</h4><p>我们要对 == 两边的值认真推敲，以下两个原则可以让我们有效地避免出错。这时最好用 === 来避免不经意的强制类型转换。</p>
 <ol>
 <li>如果两边的值中有 true 或者 false，千万不要使用 ==。</li>
@@ -899,23 +1071,36 @@
 </ol>
 <h2 id="抽象关系比较"><a href="#抽象关系比较" class="headerlink" title="抽象关系比较"></a>抽象关系比较</h2><ol>
 <li><p>比较双方首先调用 ToPrimitive，如果结果出现非字符串，就根据 ToNumber 规则将双方强 制类型转换为数字来进行比较。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [ 42 ]; </span><br><span class="line">var b &#x3D; [ &quot;43&quot; ]; </span><br><span class="line">a &lt; b;  &#x2F;&#x2F; true</span><br><span class="line">b &lt; a;  &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure></li>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">42</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"43"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+a <span class="token operator">&lt;</span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// true</span>
+b <span class="token operator">&lt;</span> a<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
+</li>
 </ol>
 <p>如果比较双方都是字符串，则按字母顺序来进行比较</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [ &quot;42&quot; ]; </span><br><span class="line">var b &#x3D; [ &quot;043&quot; ];  </span><br><span class="line">a &lt; b;  &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"42"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"043"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>  
+a <span class="token operator">&lt;</span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> b<span class="token punctuation">:</span> <span class="token number">42</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> b<span class="token punctuation">:</span> <span class="token number">43</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+a <span class="token operator">&lt;</span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false</span>
 
+因为 a 是 <span class="token punctuation">[</span>object Object<span class="token punctuation">]</span>，b 也是 <span class="token punctuation">[</span>object Object<span class="token punctuation">]</span>，所以按照字母顺序 a <span class="token operator">&lt;</span> b 并不成立。
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> b<span class="token punctuation">:</span> <span class="token number">42</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> b<span class="token punctuation">:</span> <span class="token number">43</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+a <span class="token operator">&lt;</span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false</span>
+a <span class="token operator">==</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false </span>
+a <span class="token operator">></span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// false </span>
 
+a <span class="token operator">&lt;=</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+a <span class="token operator">>=</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#123; b: 42 &#125;; </span><br><span class="line">var b &#x3D; &#123; b: 43 &#125;; </span><br><span class="line">a &lt; b;  &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">因为 a 是 [object Object]，b 也是 [object Object]，所以按照字母顺序 a &lt; b 并不成立。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#123; b: 42 &#125;;</span><br><span class="line">var b &#x3D; &#123; b: 43 &#125;; </span><br><span class="line">a &lt; b;  &#x2F;&#x2F; false</span><br><span class="line">a &#x3D;&#x3D; b; &#x2F;&#x2F; false </span><br><span class="line">a &gt; b;  &#x2F;&#x2F; false </span><br><span class="line"></span><br><span class="line">a &lt;&#x3D; b; &#x2F;&#x2F; true</span><br><span class="line">a &gt;&#x3D; b; &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">因为根据规范 a &lt;&#x3D; b 被处理为 b &lt; a，然后将结果反转。因为 b &lt; a 的结果是 false，所 以 a &lt;&#x3D; b 的结果是 true。</span><br><span class="line">实际上 JavaScript 中 &lt;&#x3D; 是 “不大于”的意思（即 !(a &gt; b)，处理为 !(b &lt; a)）。同理 a &gt;&#x3D; b 处理为 b &lt;&#x3D; a。</span><br></pre></td></tr></table></figure>
-
+因为根据规范 a <span class="token operator">&lt;=</span> b 被处理为 b <span class="token operator">&lt;</span> a，然后将结果反转。因为 b <span class="token operator">&lt;</span> a 的结果是 <span class="token boolean">false</span>，所 以 a <span class="token operator">&lt;=</span> b 的结果是 <span class="token boolean">true</span>。
+实际上 JavaScript 中 <span class="token operator">&lt;=</span> 是 “不大于”的意思（即 <span class="token operator">!</span><span class="token punctuation">(</span>a <span class="token operator">></span> b<span class="token punctuation">)</span>，处理为 <span class="token operator">!</span><span class="token punctuation">(</span>b <span class="token operator">&lt;</span> a<span class="token punctuation">)</span>）。同理 a <span class="token operator">>=</span> b 处理为 b <span class="token operator">&lt;=</span> a。
+</code></pre>
 <p>相等比较有严格相等，关系比较却没有“严格关系比较”。 也就是说如果<strong>要避免 a &lt; b 中发生隐式强制类型转换，我们只能确保 a 和 b 为相同的类型</strong>， 除此之外别无他法</p>
 <h1 id="5-语法"><a href="#5-语法" class="headerlink" title="5.语法"></a>5.语法</h1><blockquote>
 <ol>
@@ -994,7 +1179,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E4%B8%8D%E8%BF%B7%E8%B7%AF%E7%9A%84JavaScript/">
+                                    <span class="chip bg-color">不迷路的JavaScript</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1158,280 +1347,6 @@
     
 
     
-        <style>
-    .twikoo-card {
-        margin: 1.5rem auto;
-    }
-
-    .twikoo-card .card-content {
-        padding: 20px;
-    }
-
-    #tcomments textarea {
-        box-sizing: border-box;
-        background: url("/") 100% 100% no-repeat;
-    }
-
-    #tcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #tcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #tcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #tcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #tcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #tcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #tcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #tcomments ul li {
-        list-style-type: disc;
-    }
-
-    #tcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #tcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #tcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #tcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #tcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #tcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #tcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #tcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #tcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #tcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #tcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #tcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #tcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #tcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #tcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #tcomments dfn {
-        font-style: italic;
-    }
-
-    #tcomments small {
-        font-size: 85%;
-    }
-
-    #tcomments cite {
-        font-style: normal;
-    }
-
-    #tcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card twikoo-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div class="card-content" style="display: grid">
-        <div id="tcomments"></div>
-    </div>
-</div>
-
-<script src="/libs/twikoo/twikoo.all.min.js"></script>
-<script>
-    twikoo.init({
-        envId: 'twikoo-1gs9l0fb17e7897a',
-        el: '#tcomments',
-        region: '',
-        path: ''
-    }).then(function () {
-        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
-        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-            if (tkInputs[tkInputsIndex]) {
-                tkInputs[tkInputsIndex].classList.add('browser-default');
-            }
-        }
-    });
-</script>
-
-    
 
     
 
@@ -1463,11 +1378,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1500,11 +1427,23 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%8D%E8%BF%B7%E8%B7%AF%E7%9A%84JavaScript/">
+                        <span class="chip bg-color">不迷路的JavaScript</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1707,8 +1646,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1725,7 +1662,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/Oxygenend" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1904,8 +1841,6 @@ $(function () {
     <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
     
 
@@ -1914,7 +1849,16 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
@@ -1925,6 +1869,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 
 </html>

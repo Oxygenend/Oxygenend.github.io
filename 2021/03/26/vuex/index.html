@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                web前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -467,49 +480,80 @@
                 <p><code>Vuex</code>是一个全局数据管理的一种机制，可以方便的实现数据的共享</p>
 <h4 id="使用Vuex管理数据的好处"><a href="#使用Vuex管理数据的好处" class="headerlink" title="使用Vuex管理数据的好处"></a>使用Vuex管理数据的好处</h4><p>A.能够在<code>vuex</code>中集中管理共享的数据，便于开发和后期进行维护<br>B.能够高效的实现组件之间的数据共享，提高开发效率<br>C.存储在<code>vuex</code>中的数据是响应式的，当数据发生改变时，页面中的数据也会同步更新</p>
 <p>使用<code>Vuex</code>只需要在创建项目配置的时候选上<code>vuwx</code>即可，会自动生成以下页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">    state: &#123;&#125;,</span><br><span class="line">    mutations: &#123;&#125;,</span><br><span class="line">    actions: &#123;&#125;,</span><br><span class="line">    modules: &#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span>
 
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    state<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    mutations<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    actions<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    modules<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+</code></pre>
 <h4 id="state"><a href="#state" class="headerlink" title="state"></a>state</h4><p>提供唯一的公共数据源，所有共享的数据都要统一放在<code>store</code>的<code>state</code>中存储</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">    user: JSON.parse(window.localStorage.getItem(&#39;user&#39;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">    state<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>在组件中访问<code>State</code>的方式：<br>1)<code>this.$store.state</code>.全局数据名称 ：<code>this.$store.state.count</code><br>2).先按需导入mapState函数：<code>import &#123; mapState &#125; from &#39;vuex&#39;</code><br>然后数据映射为计算属性：<code>computed:&#123; ...mapState([&#39;全局数据名称&#39;]) &#125;</code></p>
 <h4 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h4><p>用于修改<code>$store</code>中的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">       setUser(state, data) &#123;</span><br><span class="line">           &#x2F;&#x2F;第一个形参永远都是state也就是$state对象</span><br><span class="line">           &#x2F;&#x2F;第二个形参是调用setUser时传递的参数</span><br><span class="line">           state.user &#x3D; data</span><br><span class="line"></span><br><span class="line">           &#x2F;&#x2F;为了数据持久化，把数据放在本地</span><br><span class="line">           window.localStorage.setItem(&#39;user&#39;, JSON.stringify(state.user))</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"> mutations<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">setUser</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//第一个形参永远都是state也就是$state对象</span>
+            <span class="token comment" spellcheck="true">//第二个形参是调用setUser时传递的参数</span>
+            state<span class="token punctuation">.</span>user <span class="token operator">=</span> data
 
+            <span class="token comment" spellcheck="true">//为了数据持久化，把数据放在本地</span>
+            window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>在组件中访问<code>mutations</code>方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;调用函数名，传递参数</span><br><span class="line"> this.$store.commit(&#39;setUser&#39;,data.data)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapMutations &#125; from &#39;vuex&#39;</span><br><span class="line">methods:&#123;</span><br><span class="line">  ...mapMutations([&#39;add&#39;])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">      <span class="token comment" spellcheck="true">//调用函数名，传递参数</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setUser'</span><span class="token punctuation">,</span>data<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">        <span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> mapMutations <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+        methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+          <span class="token operator">...</span><span class="token function">mapMutations</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'add'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <h4 id="action"><a href="#action" class="headerlink" title="action"></a>action</h4><p>在<code>mutations</code>中不能编写异步的代码，会导致<code>vue</code>调试器的显示出错。<br>在<code>vuex</code>中我们可以使用<code>Action</code>来执行异步操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">  addAsync(context,step)&#123;</span><br><span class="line">    setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">      context.commit(&#39;add&#39;,step);</span><br><span class="line">    &#125;,2000)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">actions<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token function">addAsync</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>step<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'add'</span><span class="token punctuation">,</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>在组件中访问<code>action</code>方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">  AddAsync()&#123;</span><br><span class="line">    this.$store.dispatch(&#39;addAsync&#39;,5)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapActions &#125; from &#39;vuex&#39;</span><br><span class="line">methods:&#123;</span><br><span class="line">  ...mapMutations([&#39;subAsync&#39;])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token function">AddAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'addAsync'</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> mapActions <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span><span class="token function">mapMutations</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'subAsync'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <h4 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h4><p><code>getter</code>用于对<code>store</code>中的数据进行加工处理形成新的数据<br>它只会包装<code>store</code>中保存的数据，并不会修改<code>store</code>中保存的数据，当<code>store</code>中的数据发生变化时，<code>getter</code>生成的内容也会随之变化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">  &#x2F;&#x2F;添加了一个showNum的属性</span><br><span class="line">  showNum : state &#x3D;&gt;&#123;</span><br><span class="line">    return &#39;最新的count值为：&#39;+state.count;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">  getters<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//添加了一个showNum的属性</span>
+    showNum <span class="token punctuation">:</span> state <span class="token operator">=</span><span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token string">'最新的count值为：'</span><span class="token operator">+</span>state<span class="token punctuation">.</span>count<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>在组件中访问<code>getter</code>方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;$store.getters.showNum&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapGetters &#125; from &#39;vuex&#39;</span><br><span class="line">computed:&#123;</span><br><span class="line">  ...mapGetters([&#39;showNum&#39;])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>showNum<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> mapGetters <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+computed<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span><span class="token function">mapGetters</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'showNum'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 
                 
             </div>
@@ -573,7 +617,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -737,280 +785,6 @@
     
 
     
-        <style>
-    .twikoo-card {
-        margin: 1.5rem auto;
-    }
-
-    .twikoo-card .card-content {
-        padding: 20px;
-    }
-
-    #tcomments textarea {
-        box-sizing: border-box;
-        background: url("/") 100% 100% no-repeat;
-    }
-
-    #tcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #tcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #tcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #tcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #tcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #tcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #tcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #tcomments ul li {
-        list-style-type: disc;
-    }
-
-    #tcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #tcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #tcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #tcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #tcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #tcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #tcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #tcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #tcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #tcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #tcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #tcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #tcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #tcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #tcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #tcomments dfn {
-        font-style: italic;
-    }
-
-    #tcomments small {
-        font-size: 85%;
-    }
-
-    #tcomments cite {
-        font-style: normal;
-    }
-
-    #tcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card twikoo-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div class="card-content" style="display: grid">
-        <div id="tcomments"></div>
-    </div>
-</div>
-
-<script src="/libs/twikoo/twikoo.all.min.js"></script>
-<script>
-    twikoo.init({
-        envId: 'twikoo-1gs9l0fb17e7897a',
-        el: '#tcomments',
-        region: '',
-        path: ''
-    }).then(function () {
-        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
-        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-            if (tkInputs[tkInputsIndex]) {
-                tkInputs[tkInputsIndex].classList.add('browser-default');
-            }
-        }
-    });
-</script>
-
-    
 
     
 
@@ -1042,11 +816,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%8D%E8%BF%B7%E8%B7%AF%E7%9A%84JavaScript/">
+                        <span class="chip bg-color">不迷路的JavaScript</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1079,11 +865,23 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1286,8 +1084,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1304,7 +1100,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/Oxygenend" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1483,8 +1279,6 @@ $(function () {
     <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
     
 
@@ -1493,7 +1287,16 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
@@ -1504,6 +1307,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 
 </html>

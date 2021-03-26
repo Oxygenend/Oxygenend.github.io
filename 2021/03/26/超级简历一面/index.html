@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%AD%BB%E8%AE%B0%E7%A1%AC%E8%83%8C%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                <span class="chip bg-color">死记硬背的面试题</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" class="post-category">
+                                前端面试
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -465,40 +478,83 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="找到数组中符合条件的数"><a href="#找到数组中符合条件的数" class="headerlink" title="找到数组中符合条件的数"></a>找到数组中符合条件的数</h3><h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p><code>find</code>方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为<code>true</code>的成员，然后返回该成员。如果没有符合条件的成员，则返回<code>undefined</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var newArray &#x3D; &#123;&#125;;</span><br><span class="line">var array &#x3D;[</span><br><span class="line">&#123;name:&#39;aiai&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;sisi&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;lulu&#39;,aeg:12&#125;</span><br><span class="line">]</span><br><span class="line">newArray &#x3D; this.array.find((item)&#x3D;&gt;&#123;</span><br><span class="line">if(item.name&#x3D;&#x3D;&#x3D;&#39;sisi&#39;)&#123;</span><br><span class="line">return item</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findIndex&#96;方法的用法与&#96;find&#96;方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回&#96;-1</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1,2,3,4,5].findIndex(function(value,index,arr)&#123;</span><br><span class="line">return value&gt;2;</span><br><span class="line">&#125;)   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
-
-<h4 id="for循环-加if判断"><a href="#for循环-加if判断" class="headerlink" title="for循环 加if判断"></a>for循环 加if判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var newArray &#x3D; [];</span><br><span class="line">var j &#x3D; 0;</span><br><span class="line">var array &#x3D;[</span><br><span class="line">&#123;name:&#39;aiai&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;sisi&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;lulu&#39;,aeg:12&#125;</span><br><span class="line">]</span><br><span class="line">for (let i in array)&#123;</span><br><span class="line">if(array[i].name&#x3D;&#x3D;&#x3D;&#39;sisi&#39;)&#123;</span><br><span class="line">newArray[j++]&#x3D;array[i]</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var array &#x3D;[</span><br><span class="line">&#123;name:&#39;aiai&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;sisi&#39;,aeg:12&#125;,</span><br><span class="line">&#123;name:&#39;lulu&#39;,aeg:12&#125;</span><br><span class="line">]</span><br><span class="line">function filterByName(array,name)&#123;</span><br><span class="line">return array.filter(item&#x3D;&gt;item.name&#x3D;&#x3D;&#x3D;name)</span><br><span class="line">&#125;</span><br><span class="line">console.log(filterByName(array,&#39;sisi&#39;))</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> newArray <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'aiai'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'sisi'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'lulu'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">]</span>
+newArray <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>array<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>name<span class="token operator">===</span><span class="token string">'sisi'</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> item
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h4><pre class=" language-javascript"><code class="language-javascript">findIndex<span class="token template-string"><span class="token string">`方法的用法与`</span></span>find<span class="token template-string"><span class="token string">`方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回`</span></span><span class="token operator">-</span><span class="token number">1</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> value<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//2</span>
+</code></pre>
+<h4 id="for循环-加if判断"><a href="#for循环-加if判断" class="headerlink" title="for循环 加if判断"></a>for循环 加if判断</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> newArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'aiai'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'sisi'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'lulu'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> array<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token operator">===</span><span class="token string">'sisi'</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+newArray<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> array <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'aiai'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'sisi'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'lulu'</span><span class="token punctuation">,</span>aeg<span class="token punctuation">:</span><span class="token number">12</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">function</span> <span class="token function">filterByName</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>item<span class="token operator">=</span><span class="token operator">></span>item<span class="token punctuation">.</span>name<span class="token operator">===</span>name<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterByName</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span><span class="token string">'sisi'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
 <h4 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h4><p><code>includes</code>方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的<code>includes</code>方法类似。该方法属于ES7</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1,2,3,4,5].includes(2)&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
-
-<h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (arr.indexOf(el) !&#x3D;&#x3D; -1) &#123;</span><br><span class="line">  &#x2F;&#x2F; ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//true</span>
+</code></pre>
+<h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <h3 id="遍历数组的方法"><a href="#遍历数组的方法" class="headerlink" title="遍历数组的方法"></a>遍历数组的方法</h3><p>使用<code>for</code>和<code>for/in</code>，我们可以访问数组的下标，而不是实际的数组元素值箭头函数与普通函数的区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(let i&#x3D;0;i&gt;arr.length;i++)&#123;</span><br><span class="line">console.log(arr[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(let i in arr)&#123;</span><br><span class="line">console.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">></span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>for/of 可以直接访问数组的元素值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (const v of arr)&#123;</span><br><span class="line">console.log(v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> v <span class="token keyword">of</span> arr<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>使用<code>forEach()</code>，则可以同时访问数组的下标与元素值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach((v,i)&#x3D;&gt;console.log(v))</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript">arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
 <p>map方法 让数组通过某种计算产生一个新数组,影射成一个新的数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 3]</span><br><span class="line">var firearr &#x3D; arr.map(current &#x3D;&gt; current * 5)</span><br><span class="line">console.log(firearr); &#x2F;&#x2F;[ 5, 10, 15 ]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> firearr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>current <span class="token operator">=</span><span class="token operator">></span> current <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>firearr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[ 5, 10, 15 ]</span>
+</code></pre>
 <p>filter方法 筛选出过滤出数组中符合条件的项,组成新数组.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr &#x3D; [2, 3, 4, 5, 6]</span><br><span class="line">var morearr &#x3D; arr.filter(function(number) &#123;</span><br><span class="line">    return number &gt; 3</span><br><span class="line">&#125;)</span><br><span class="line">console.log(morearr);&#x2F;&#x2F;[ 4, 5, 6 ]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> morearr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> number <span class="token operator">></span> <span class="token number">3</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>morearr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//[ 4, 5, 6 ]</span>
+</code></pre>
 <h4 id="箭头函数基本语法"><a href="#箭头函数基本语法" class="headerlink" title="箭头函数基本语法"></a>箭头函数基本语法</h4><ul>
 <li>如果箭头函数没有参数，直接写一个空括号即可</li>
 <li>如果参数只有一个可以省略参数的括号</li>
@@ -630,7 +686,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%AD%BB%E8%AE%B0%E7%A1%AC%E8%83%8C%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                    <span class="chip bg-color">死记硬背的面试题</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -794,298 +854,23 @@
     
 
     
-        <style>
-    .twikoo-card {
-        margin: 1.5rem auto;
-    }
-
-    .twikoo-card .card-content {
-        padding: 20px;
-    }
-
-    #tcomments textarea {
-        box-sizing: border-box;
-        background: url("/") 100% 100% no-repeat;
-    }
-
-    #tcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #tcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #tcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #tcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #tcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #tcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #tcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #tcomments ul li {
-        list-style-type: disc;
-    }
-
-    #tcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #tcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #tcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #tcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #tcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #tcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #tcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #tcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #tcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #tcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #tcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #tcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #tcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #tcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #tcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #tcomments dfn {
-        font-style: italic;
-    }
-
-    #tcomments small {
-        font-size: 85%;
-    }
-
-    #tcomments cite {
-        font-style: normal;
-    }
-
-    #tcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #tcomments table,
-    th,
-    td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n),
-    thead {
-        background-color: #fafafa;
-    }
-
-    #tcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #tcomments table td {
-        min-width: 80px;
-    }
-
-    #tcomments [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card twikoo-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div class="card-content" style="display: grid">
-        <div id="tcomments"></div>
-    </div>
-</div>
-
-<script src="/libs/twikoo/twikoo.all.min.js"></script>
-<script>
-    twikoo.init({
-        envId: 'twikoo-1gs9l0fb17e7897a',
-        el: '#tcomments',
-        region: '',
-        path: ''
-    }).then(function () {
-        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
-        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-            if (tkInputs[tkInputsIndex]) {
-                tkInputs[tkInputsIndex].classList.add('browser-default');
-            }
-        }
-    });
-</script>
-
-    
 
     
 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/26/%E8%B6%85%E7%BA%A7%E7%AE%80%E5%8E%86%E4%B8%80%E9%9D%A2/">
+                <a href="/2021/03/26/Ajax/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="超级简历的一面.">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Ajax">
                         
-                        <span class="card-title">超级简历的一面.</span>
+                        <span class="card-title">Ajax</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1095,18 +880,29 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="post-category">
+                                    前后端交互
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ajax/">
+                        <span class="chip bg-color">Ajax</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1138,11 +934,23 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Oxygen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%91%84%E5%BD%B1/" class="post-category">
+                                    摄影
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8E%9F%E6%9D%A5%E4%BD%A0%E4%B9%9F%E7%8E%A9%E6%91%84%E5%BD%B1/">
+                        <span class="chip bg-color">原来你也玩摄影</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1345,8 +1153,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1363,7 +1169,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/Oxygenend" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1542,8 +1348,6 @@ $(function () {
     <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
     
 
@@ -1552,7 +1356,16 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
@@ -1563,6 +1376,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 
 </html>
