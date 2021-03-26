@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Oxygen">
+    <meta name="keywords" content="Vue, Oxygen">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Oxygen</title>
+    <title>Vue | Oxygen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Vue</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-25
+                    2021-03-26
                 </div>
                 
 
@@ -464,19 +464,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%96%B9%E6%B3%95">数据与方法</a></h1><p>当一个 Vue 实例被创建时，它将 数据 对象中的所有的 属性加入到 Vue 的<strong>响应式系统</strong>中。当这些 属性 的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。值得注意的是只有当实例被创建时就已经存在于数据中的属性才是<strong>响应式</strong>的。也就是说如果你添加一个新的属性，那么对于这个新添加的属性的改动不会触发任何试图的更新</p>
+<p>使用 <code>Object.freeze()</code>，这会阻止修改现有的 属性，也意味着响应系统无法再<em>追踪</em>变化。</p>
+<p>除了数据 属性，Vue 实例还暴露了一些有用的实例 属性与方法。它们都有前缀 <code>$</code>，以便与用户定义的 属性 区分开来。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B-property">API 参考</a></p>
+<h3 id="实例生命周期钩子"><a href="#实例生命周期钩子" class="headerlink" title="实例生命周期钩子"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">实例生命周期钩子</a></h3><ul>
+<li>挂载（初始化相关属性）</li>
+</ul>
+<ol>
+<li>beforeCreate 在实例初始化之后，数据观测和事件配置之前被调用</li>
+<li>created 在实例创建完成后立即被调用</li>
+<li>beforeMount 在挂载开始之前被调用</li>
+<li>mounted 被新创建的vm.$el替换，并挂载到实例上去时候调用该钩子</li>
+</ol>
+<ul>
+<li>更新（元素或组件的变更操作）</li>
+</ul>
+<ol>
+<li>beforeUpdate 数据更新使调用，发生在虚拟DOM打补丁之前</li>
+<li>updated 由于数据更改导致虚拟DOM重新渲染和打补丁在这之后会调用该钩子</li>
+</ol>
+<ul>
+<li>销毁（销毁相关属性）关属性）</li>
+</ul>
+<ol>
+<li>beforeDestroy 实例销毁之前调用</li>
+<li>destroyed 实例销毁之后调用</li>
+</ol>
+<p>不要在选项 property 或回调上使用箭头函数因为箭头函数并没有 <code>this</code>，<code>this</code> 会作为变量一直向上级词法作用域查找，直至找到为止，经常导致错误</p>
+<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><p>Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。</p>
+<h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E6%8F%92%E5%80%BC">插值</a></h4><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E6%96%87%E6%9C%AC">文本</a>：数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值</p>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#v-once">v-once 指令</a>，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定</p>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#v-html"><code>v-html</code> 指令</a>：双大括号会将数据解释为普通文本，而非 HTML 代码。v-html输出真正的 HTML（站点上动态渲染的任意 HTML 可能会非常危险，因为它很容易导致 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS 攻击</a>）</p>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#v-bind"><code>v-bind</code> 指令</a>：绑定html属性</p>
+<p>对于以上所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含<strong>单个表达式</strong></p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4">指令</a></h3><p>指令 (Directives) 是带有 <code>v-</code> 前缀的特殊 attribute。</p>
+<p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示。</p>
+<p>v-bind可以绑定动态参数，你可以使用动态参数为一个动态的事件名绑定处理函数</p>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:</span>[<span class="attr">attributeName</span>]=<span class="string">&quot;url&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:</span>[<span class="attr">eventName</span>]=<span class="string">&quot;doSomething&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E4%BF%AE%E9%A5%B0%E7%AC%A6">修饰符</a></h4><p>修饰符 (modifier) 是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定</p>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">&quot;onSubmit&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#v-bind-%E7%BC%A9%E5%86%99"><code>v-bind</code> 缩写</a>为<code>:</code>,<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#v-on-%E7%BC%A9%E5%86%99"><code>v-on</code> 缩写</a>为<code>@</code></p>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性</a></h3><p>模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。所以，对于任何复杂逻辑，你都应当使用<strong>计算属性</strong>。</p>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&#x27;#example&#x27;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">&#x27;Hello&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.message.split(<span class="string">&#x27;&#x27;</span>).reverse().join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>我们可以将同一函数定义为一个方法(methods)而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是<strong>计算属性是基于它们的响应式依赖进行缓存的</strong>。只在相关响应式依赖发生改变时它们才会重新求值。</p>
+<p>观察和响应 Vue 实例上的数据变动：<strong>侦听属性</strong>。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 <code>watch</code>,通常更好的做法是使用计算属性而不是命令式的 <code>watch</code> 回调</p>
+<p>计算属性默认只有 getter，不过在需要时你也可以提供一个 setter</p>
+<h3 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/computed.html#%E4%BE%A6%E5%90%AC%E5%99%A8">侦听器</a></h3><p>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。除了 <code>watch</code> 选项之外，还可以使用命令式的 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-watch">vm.$watch API</a></p>
 
                 
             </div>
@@ -503,7 +556,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Oxygenend.github.io/2021/03/25/hello-world/">https://Oxygenend.github.io/2021/03/25/hello-world/</a>
+                    <a href="https://Oxygenend.github.io/2021/03/26/vue/">https://Oxygenend.github.io/2021/03/26/vue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -710,18 +763,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/25/hello-world/">
+                <a href="/2021/03/26/vuex/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Vuex">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Vuex</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -731,9 +783,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -742,7 +794,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -753,13 +804,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/25/hello-world/">
+                <a href="/2021/03/26/vue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Vue">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Vue</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -770,7 +821,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
                             </span>
                         <span class="publish-author">
                             
