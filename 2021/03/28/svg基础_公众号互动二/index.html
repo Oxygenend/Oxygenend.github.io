@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C语言和Java中生成随机数, Oxygen">
+    <meta name="keywords" content="svg基础+公众号互动 (二), Oxygen">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C语言和Java中生成随机数 | Oxygen</title>
+    <title>svg基础+公众号互动 (二) | Oxygen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C语言和Java中生成随机数</h1>
+                    <h1 class="description center-align post-title">svg基础+公众号互动 (二)</h1>
                 </div>
             </div>
         </div>
@@ -431,20 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">
-                                <span class="chip bg-color">随机数</span>
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1/">
+                                <span class="chip bg-color">微信</span>
                             </a>
                         
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">C语言</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%BF%B7%E4%BA%BA%E7%9A%84Java/">
-                                <span class="chip bg-color">迷人的Java</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">程序设计</span>
+                            <a href="/tags/html/">
+                                <span class="chip bg-color">html</span>
                             </a>
                         
                     </div>
@@ -455,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                web前端
+                            <a href="/categories/%E5%BE%AE%E4%BF%A1/" class="post-category">
+                                微信
                             </a>
                         
                     </div>
@@ -468,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-26
+                    2021-03-28
                 </div>
                 
 
@@ -489,67 +481,88 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在实际编程中，我们经常需要生成随机数，例如，实现排序算法的时候通过生成随机数来测试算法的可行性</p>
-<h2 id="C语言生成随机数"><a href="#C语言生成随机数" class="headerlink" title="C语言生成随机数"></a>C语言生成随机数</h2><p>在C语言中，我们一般使用 &lt;stdlib.h&gt; 头文件中的 rand() 函数来生成随机数，rand() 会随机生成一个位于 0 ~ RAND_MAX 之间的整数。<br>RAND_MAX 是 &lt;stdlib.h&gt; 头文件中的一个宏，它用来指明 rand() 所能返回的随机数的最大值。C语言标准并没有规定 RAND_MAX 的具体数值，只是规定它的值至少为 32767。在实际编程中，我们也不需要知道 RAND_MAX 的具体值，把它当做一个很大的数来对待即可。</p>
-<p><strong>在使用rand()函数前需要一条语句进行随机数初始值的设置 。</strong></p>
-<p>c</p>
-<pre class=" language-c"><code class="language-c"><span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//如果不加上的话会导致每次生成的随机数一样</span>
+                <h2 id="svg基础-公众号互动（二）"><a href="#svg基础-公众号互动（二）" class="headerlink" title="svg基础+公众号互动（二）"></a>svg基础+公众号互动（二）</h2><p><strong>话接上回……</strong></p>
+<p>上节我们讲了svg基础及简单的动画demo及案例，这节我们明显有些更高的svg交互。</p>
+<p>效果图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201217102713556.gif" alt="在这里插入图片描述"></p>
+<p><strong>在这里插入图片描述</strong></p>
+<p>不要激动，这不是css，也不是js写的，这就是一张svg，神不神奇？？？</p>
+<p>来看看怎么做的：</p>
+<p><strong>1.闪烁的文字</strong></p>
+<p>XML文件</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">background-image</span><span class="token punctuation">:</span><span class="token url">url(https://s3.ax1x.com/2020/12/16/rQWxoT.jpg)</span><span class="token punctuation">;</span><span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span>,<span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span>
+        <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.1<span class="token punctuation">"</span></span> <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0 0 640 800<span class="token punctuation">"</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>animate</span> <span class="token attr-name">attributeName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity<span class="token punctuation">"</span></span> <span class="token attr-name">begin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0s<span class="token punctuation">"</span></span> <span class="token attr-name">dur</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1s<span class="token punctuation">"</span></span> <span class="token attr-name">values</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1;0;1<span class="token punctuation">"</span></span> <span class="token attr-name">repeatCount</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>indefinite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>animate</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>540<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fff<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">30</span>px</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>点击爆竹放飞梦想<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
 </code></pre>
-<p>用系统时间进行随机数初始值的设置。函数time()返回以秒计算的当前时间值，该值被转换为无符号整数并用作随机数发生器的种子。作为一个随机数实际上是一个伪随机数，并不是实际意义上的随机，仅仅是通过一定的数学方法（不同的数学方法产生满足不同分布的随机数序列），从一个初始值生成的一个序列，因此这个初始值如果雷同的话，生成的随机数也是相同的。因此在第一次使用rand函数前，需要使用srand函数，我们可以通过 srand() 函数来重新“播种”，这样种子就会发生改变。</p>
-<p><strong>生成随机数需要用到的头文件为：</strong></p>
-<p>c</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span>  </span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h></span>  </span><span class="token comment" spellcheck="true">//time()函数</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span> </span><span class="token comment" spellcheck="true">//srand()函数</span>
+<p><strong>2.烟花上天</strong></p>
+<blockquote>
+<p>想法：这里要做到烟花上天后，变成贺语。其实就是把烟花和贺语变成一个组（g标签），一起上移，然后让我们的贺语覆盖掉烟花，就做成了。</p>
+</blockquote>
+<blockquote>
+<p>烟花可以去阿里矢量图标库找，然后下载svg格式，把里面的路径提取出来就可以了。文字可以下载图片，然后通过ai转成svg格式，提取路径。</p>
+</blockquote>
+<p>XML文件</p>
+<pre class=" language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">background-image</span><span class="token punctuation">:</span><span class="token url">url(https://s3.ax1x.com/2020/12/16/rQWxoT.jpg)</span><span class="token punctuation">;</span><span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">100%</span>,<span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span>
+        <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.1<span class="token punctuation">"</span></span> <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0 0 640 800<span class="token punctuation">"</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token punctuation">></span></span>
+            闪烁的文字代码
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>animateTransform</span> <span class="token attr-name">attributeName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>transform<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate<span class="token punctuation">"</span></span> <span class="token attr-name">values</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0 0;0 -350<span class="token punctuation">"</span></span> <span class="token attr-name">repeatCount</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+                <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>freeze<span class="token punctuation">"</span></span> <span class="token attr-name">begin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>click<span class="token punctuation">"</span></span> <span class="token attr-name">dur</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.5s<span class="token punctuation">"</span></span> <span class="token attr-name">restart</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>never<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>animateTransform</span><span class="token punctuation">></span></span>
+                把烟花和贺语放在一个组里面，通过animateTransform 上移
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span><span class="token number">140</span>px, <span class="token number">580</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            这里是从阿里图标下载的烟花svg提取的path
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M37.1,124.13v3.45a20.83,20.83,0,0,1-3.36,12.28,21.27,21.27,0,0,0-3.54,11.86,3.45,3.45,0,0,0,3.45,3.45h0a3.45,3.45,0,0,0,3.45-3.45h0c0-3.88,1.1-5.78,2.62-8.41A27.61,27.61,0,0,0,44,127.58v-3.45H37.1Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#c83741<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M50.9,124.13v72.42A3.45,3.45,0,0,0,54.34,200h0a3.45,3.45,0,0,0,3.45-3.45h0V124.13H50.9Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#963737<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M26.76,37.91v86.22a3.45,3.45,0,0,0,3.45,3.45H57.8a3.45,3.45,0,0,0,3.45-3.45V37.91Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ff4b4b<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M26.76,37.91H61.24V51.71H26.76Z<span class="token punctuation">"</span></span> <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#c83741<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M17.08,36.27A365.1,365.1,0,0,0,40.89,1.75a3.64,3.64,0,0,1,6.23,0,365,365,0,0,0,23.8,34.51,3.14,3.14,0,0,1-2.46,5.09H19.55A3.14,3.14,0,0,1,17.08,36.27Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ff4b4b<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M61.24,58.6,26.76,68.95V55.15L61.24,44.81Zm0,27.59L26.76,96.54V82.74L61.24,72.4Zm0,27.59L26.76,124.13V110.33L61.24,100Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ffcf65<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M61.24,51.7v-6.9l-23,6.9Z<span class="token punctuation">"</span></span> <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-16.4 0)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ffb450<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span><span class="token number">120</span>px, <span class="token number">560</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                 这里是贺语svg提取的path
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>animate</span> <span class="token attr-name">attributeName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity<span class="token punctuation">"</span></span> <span class="token attr-name">begin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>click+0.5<span class="token punctuation">"</span></span> <span class="token attr-name">dur</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.1s<span class="token punctuation">"</span></span> <span class="token attr-name">values</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0;1<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>freeze<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">restart</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>never<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>animate</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>92<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>229<span class="token punctuation">"</span></span> <span class="token attr-name">rx</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>12<span class="token punctuation">"</span></span> <span class="token attr-name">ry</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>12<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fc4d50<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M37.17,20.93l-2.58,5.16h-7L32,16.29h7.22L38.54,18H66.9v2.92H52.63v6.88H66.38V30.9H52.63V43.27H67.42V46.2H52.63V56h-7V46.2h-18V43.27h3.27V27.81H45.59V20.93Zm8.42,22.34V30.9H37.34V43.27Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-0.5 -0.5)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fff<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M34.42,75.62v-1.2h-7V71.15h7V69.43l7.22-.86v2.58H53.32V69.43l6.88-.86v2.58h7.22v3.27H60.2v1.2H53.32v-1.2H41.63v1.2H40.26V78h7.56v3.09H28.06V78h6.87l5-2.41Zm-7,14.09V86.62h11L39.92,82h6.36l-1.55,4.64h3.61v3.09Zm7.39,6.36-1.55,12.72H28.06L29.6,96.07Zm-.69,12.72,1.55-4.47V94.7H28.4V91.78h7.22v-.69l6.88-1.2v1.89h5V94.7h-5v14.09ZM35.45,82l1.2,3.78H30.29L29.09,82Zm12.89,26.81h-4l-1.2-12.72h4ZM67.42,84.9v2.92H65v21H58.82v-21H55.73l-.69,21H49l1-31.8,16.5-.69v2.92l-10.48.52L55.9,84.9Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-0.5 -0.5)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fff<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M27.37,125.84v-3.27h40v3.27Zm2.06,36.09V129.28H44.21l6.53-2.58v2.58H65.53v32.66Zm8.08-29.22V142H57.28v-9.28Zm0,25.44H57.28V145.44H37.51Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-0.5 -0.5)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fff<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span>
+                    <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M27.37,178.47v-2.92H67.24v2.92H41.81l-1,6.36H65.35v29.39h-9.8l1.72-5V187.75h-17l-4.81,26.47H27.37l6.36-35.75Z<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">transform</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate(-0.5 -0.5)<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#fff<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
 </code></pre>
-<p><strong>下面是一个随机数生成的实例：</strong></p>
-<p>c</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p>运行结果：</p>
-<p><img src="https://topking66.gitee.io/loading.gif" alt="img"></p>
-<p><strong>生成一定范围内的随机数</strong><br>在实际的编程中，我们往往需要确定随机数的范围，可以利用取模的方法：</p>
-<p>c</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">100</span><span class="token punctuation">;</span>
-</code></pre>
-<p>则a为0-99的随机数</p>
-<p>若要规定上下限，如生成的数的范围为45-87，则代码如下：</p>
-<p>c</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">43</span><span class="token operator">+</span><span class="token number">45</span><span class="token punctuation">;</span>
-</code></pre>
-<p>分析：rand%43生成了0-42的随机数，+45则表示a的最小值为43，最大值为45</p>
-<h2 id="Java生成随机数"><a href="#Java生成随机数" class="headerlink" title="Java生成随机数"></a>Java生成随机数</h2><p>在Java中生成随机数需要使用rand()函数，借助java.util.Random类来产生一个随机数发生器，构造函数有两个，Random()和Random(long seed)。<br>第一个就是以当前时间为默认种子，每次生成不一样的随机数。<br>第二个是以指定的种子值进行，使用第二个构造方法每次产生随机数的值会相同。</p>
-<p><strong>随机数生成实例：</strong></p>
-<p>java</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Random<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Rand</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//声明创建长度为10的一维数组</span>
-        Random ran<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//生成随机数组并输出</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>ran<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">// 把范围为1-1000的随机整数复制给a[i]</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 输出a[i]</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>运行结果：</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200417234355105.png" alt="img"></p>
+<p>这是一个爆竹的效果，其他两个都是一样的直接复制粘贴就好</p>
+<p>大功告成啦！！！</p>
+<p><strong>那么我们试试把它放到微信公众号里面：</strong></p>
+<p>百度搜索微信公众平台– &gt;&gt;登录微信公众号（&gt;&gt;的注册）– &gt;&gt;图文管理– &gt;&gt;按F12打开开发者工具，然后单击鼠标右键找到图片中的body下的p标签，单击EDit编辑代码，把我们的代码复制进去就OK啦！</p>
+<p><img src="https://img-blog.csdnimg.cn/20201217104948382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTYwNTIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>在这里插入图片描述</strong></p>
+<p><strong>想了解更多资讯案例关注我吧!!!</strong></p>
+<p>百事可乐案例：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201217110520477.gif" alt="在这里插入图片描述"></p>
+<p><strong>在这里插入图片描述</strong></p>
 
                 
             </div>
@@ -576,7 +589,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Oxygenend.github.io/2021/03/26/C%E8%AF%AD%E8%A8%80%E5%92%8CJava%E4%B8%AD%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/">https://Oxygenend.github.io/2021/03/26/C%E8%AF%AD%E8%A8%80%E5%92%8CJava%E4%B8%AD%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</a>
+                    <a href="https://Oxygenend.github.io/2021/03/28/svg%E5%9F%BA%E7%A1%80_%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%92%E5%8A%A8%E4%BA%8C/">https://Oxygenend.github.io/2021/03/28/svg%E5%9F%BA%E7%A1%80_%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%92%E5%8A%A8%E4%BA%8C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -614,20 +627,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">
-                                    <span class="chip bg-color">随机数</span>
+                                <a href="/tags/%E5%BE%AE%E4%BF%A1/">
+                                    <span class="chip bg-color">微信</span>
                                 </a>
                             
-                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">C语言</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%BF%B7%E4%BA%BA%E7%9A%84Java/">
-                                    <span class="chip bg-color">迷人的Java</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">程序设计</span>
+                                <a href="/tags/html/">
+                                    <span class="chip bg-color">html</span>
                                 </a>
                             
                         </div>
@@ -799,17 +804,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/28/vue3.0/">
+                <a href="/2021/03/28/svg%E5%9F%BA%E7%A1%80_%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%92%E5%8A%A8%E4%BA%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Vue3.0">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="svg基础+公众号互动 (二)">
                         
-                        <span class="card-title">Vue3.0</span>
+                        <span class="card-title">svg基础+公众号互动 (二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -819,30 +825,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    web前端
+                            <a href="/categories/%E5%BE%AE%E4%BF%A1/" class="post-category">
+                                    微信
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1/">
+                        <span class="chip bg-color">微信</span>
                     </a>
                     
-                    <a href="/tags/vue3-0/">
-                        <span class="chip bg-color">vue3.0</span>
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
                     </a>
                     
                 </div>
@@ -856,13 +863,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/26/%E5%B8%83%E5%8B%92%E6%9D%BE%E8%AE%BA%E6%91%84%E5%BD%B1/">
+                <a href="/2021/03/28/svg%E5%9F%BA%E7%A1%80_%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%92%E5%8A%A8%E4%B8%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="布勒松论摄影">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="svg基础+公众号互动 (一)">
                         
-                        <span class="card-title">布勒松论摄影</span>
+                        <span class="card-title">svg基础+公众号互动 (一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -873,14 +880,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%91%84%E5%BD%B1/" class="post-category">
-                                    摄影
+                            <a href="/categories/%E5%BE%AE%E4%BF%A1/" class="post-category">
+                                    微信
                                 </a>
                             
                             
@@ -890,8 +897,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8E%9F%E6%9D%A5%E4%BD%A0%E4%B9%9F%E7%8E%A9%E6%91%84%E5%BD%B1/">
-                        <span class="chip bg-color">原来你也玩摄影</span>
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1/">
+                        <span class="chip bg-color">微信</span>
+                    </a>
+                    
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
                     </a>
                     
                 </div>
